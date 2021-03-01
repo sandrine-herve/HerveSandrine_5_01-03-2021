@@ -82,15 +82,44 @@
         </div>
         <!-- /.card -->
 
+        
         <div class="card card-outline-secondary my-4">
           <div class="card-header">
             Personnalisation
           </div>
           <div class="card-body">
-            <form>
-              
+            <form action="" method="post" id="color" class="mt-5">
+              <label for="color-name">Choisissez votre vernis:</label>
+              <select id="color-name">
+                <option value="">--Couleur de vernis--</option>
+                <option value=""> Bois exotiques </option>
+                <option value=""> Chêne clair </option>
+                <option value=""> Chêne doré</option>
+                <option value=""> Chêne foncé</option>
+                <option value=""> Chêne moyen</option>
+                <option value=""> Incolore</option>
+              </select>
             </form>
-            <a href="#" class="btn btn-success">Ajouter à mon panier</a>
+            <form action="" method="post" id="number" class="mt-5">
+              <label for="number-item">Choisissez le nombre d'article:</label>
+              <select id="number-item">
+                <option value="">--Articles--</option>
+                <option value=""> 1</option>
+                <option value=""> 2</option>
+                <option value=""> 3</option>
+                <option value=""> 4</option>
+                <option value=""> 5</option>
+                <option value=""> 6</option>
+                <option value=""> 7</option>
+                <option value=""> 8</option>
+                <option value=""> 9</option>
+                <option value=""> 10</option>
+              </select>
+            </form>
+            
+
+
+            <a href="#" class="btn btn-success mt-5">Ajouter à mon panier</a>
           </div>
         </div>
         <!-- /.card -->
@@ -106,14 +135,12 @@
  <footer class="py-5 bg-dark">
     <div class="container">
         <ul class="list-inline text-white col-12 text-center">
-          <li class="list-inline-item">A propos</li>
-          <li class="list-inline-item">Contact</li>
-          <li class="list-inline-item">Recrutement</li>
-          <li class="list-iline-item">Conditions d'utilisation</li>
+          <li class="list-inline-item"><a href="#">A propos</a></li>
+          <li class="list-inline-item"><a href="#">Contact</a></li>
+          <li class="list-inline-item"><a href="#">Recrutement</a></li>
+          <li class="list-iline-item"><a href="#">Conditions d'utilisation</a></li>
         </ul>
-      
     </div>
-    <!-- /.container -->
   </footer>
   
   <!-- Bootstrap core JavaScript -->
