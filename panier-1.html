@@ -425,8 +425,6 @@
             </div>
 
             </div>
-
-            <a href="#" class="btn btn-success">Commander</a>
           </div>
         </div>
         <!-- /.card -->
@@ -437,10 +435,59 @@
           <div class="card-header">
             Moyen de paiement
           </div>
-           <div class="card-body"></div>
-      </div>
-      <!-- /.col-lg-9 -->
+           <div class="card-body">
+             <div class="form-payement">
 
+              <div class="credit">
+                <input type="checkbox" name="credit-card" id="credit-card">
+                <label for="credit-card">Carte bancaire</label>
+                <br>
+                <label for="id-credit-card">Numméro de carte:</label>
+                <input type="text" name="id-credit-card" id="id-credit-card">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <label for="expiry">Date d'expiration:</label>
+                    <input type="text" name="expiry" id="expiry">
+                  </li>
+                  <li class="list-inline-item">
+                    <label for="crypto">Cryptogramme:</label>
+                    <input type="text" name="crypto" id="crypto">
+                  </li>
+                  <li>
+                    <input type="checkbox" name="card-memory" id="card-memory" checked="">
+                    <label for="card-memory">Mémoriser ma carte</label>
+                  </li>
+                </ul>
+              </div>
+              <hr>
+              <div class="paypal">
+                <input type="checkbox" name="paypal" id="paypal">
+                <label for="paypal">Paypal</label>
+                <br>
+                <a href="https://www.paypal.com/" class="btn btn-success mt-5">Payer avec Paypal</a>
+              </div>
+              <hr>
+              <div class="gift-card">
+                <input type="checkbox" name="gift" id="gift">
+                <label for="gift">Carte cadeau</label>
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <label for="number-gift">Numéro de carte cadeau:</label>
+                    <input type="text" name="number-gift" id="number-gift">
+                  </li>
+                  <li class="list-inline-item">
+                    <label for="amount">Montant:</label>
+                    <input type="text" name="amount" id="amount">
+                  </li>
+                </ul>
+                <button type="button" class="btn btn-success">Appliquer à ma carte</button>
+              </div>
+
+             </div>
+           </div>
+      </div>
+          <a href="gratitude.html"><button type="button" class="btn btn-success col-12 my-5">Acheter ma commande!</button></a>
+        
     </div>
 
   </div>
