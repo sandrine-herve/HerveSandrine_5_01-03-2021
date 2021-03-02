@@ -89,9 +89,9 @@
              <div class="gender" >
               <div class="form-group">
                <input type="checkbox" id="female" name="female" value="2" aria-required="" required>
-               <label for="female" class="mr-4 required-indicator">Mme</label>
+               <label for="female" class="mr-4 required-indicator ">Mme*</label>
                <input type="checkbox" id="male" name="male" value="1" aria-required="" required>
-               <label for="male" class="required-indicator">Mr</label>
+               <label for="male" class="required-indicator">Mr*</label>
               </div>
              </div>
 
@@ -99,11 +99,11 @@
               <div class="form-group">
               <ul class="list-inline">
                 <li class="list-inline-item" aria-required="">
-                  <label for="name">Nom:</label>
+                  <label for="name">Nom:*</label>
                   <input type="text" class="form-control col-12" name="name" id="name" required>
                </li>
                <li class="list-inline-item" aria-required="">
-                  <label for="surname">Prénom:</label>
+                  <label for="surname">Prénom:*</label>
                   <input type="text" class="form-control col-12" name="surname" id="surname" required>
                </li>
               </ul>
@@ -112,7 +112,7 @@
 
              <div class="adress-shipping">
               <div class="form-group">
-               <label for="adress" class="required-indicator">Adresse:</label>
+               <label for="adress" class="required-indicator">Adresse:*</label>
                <input type="text" name="adress" class="form-control col-12" id="adress" value maxlength="50" required>
               </div>
              </div>
@@ -129,14 +129,14 @@
                 <li class="list-inline-item">
                   <div class="shipping-podtal">
                     <div class="form-group">
-                    <label for="postal ">Code postal:</label>
+                    <label for="postal ">Code postal:*</label>
                     <input type="text" name="postal" class="form-control col-12" id="postal" placeholder="ex:29300" required>
                   </div>
                 </li>
                 <li class="list-inline-item">
                   <div class="shipping-city">
                     <div class="form-group">
-                    <label for="city">Ville:</label>
+                    <label for="city">Ville:*</label>
                     <input type="text" class="form-control col-12" name="city" id="city" required>
                     </div>
                   </div>
@@ -145,7 +145,7 @@
              </div>
 
              <div>
-                <label for="country">Pays:</label>
+                <label for="country">Pays:*</label>
                 <select class="form-control col-4" name = "pays" id="country">
                 <option value = "France" selected = "selected"> France </option>
 
@@ -398,17 +398,17 @@
                 </select>
 
             <div class="form-group">
-              <label for="phone">Mobile</label>
+              <label for="phone">Mobile:*</label>
               <input type="text" class="form-control col-4" id="phone" aria-describedby="emailHelp" placeholder="Numéro de mobile">
             </div>
 
             <div class="form-group">
-              <label for="Email">Adresse mail</label>
+              <label for="Email">Adresse mail:*</label>
               <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Entrer votre email">
             </div>
 
             <div class="form-group">
-              <label for="Password">Mot de passe</label>
+              <label for="Password">Mot de passe:*</label>
               <input type="password" class="form-control" id="Password" placeholder="Mot de passe">
             </div>
 
@@ -421,10 +421,6 @@
             <div>
               <input type="checkbox" name="shipping-adress-billing" id="billing" name="billing" checked>
               <label for="billing">Utiliser votre adresse de livraison pour la facturation.</label>
-            </div>
-
-            <div>
-              <small>Les champs marqués d’un astérisque * dans le formulaire ci-dessus sont obligatoires pour nous permettre d’enregistrer votre commande et la traiter.</small>
             </div>
             </form>
             </div>
@@ -444,15 +440,15 @@
                   <input type="checkbox" name="credit-card" id="credit-card">
                   <label for="credit-card">Carte bancaire</label>
                   <br>
-                  <label for="id-credit-card">Numméro de carte:</label>
+                  <label for="id-credit-card">Numméro de carte:*</label>
                   <input type="text" class="form-control" name="id-credit-card" id="id-credit-card">
                   <ul class="list-inline">
                     <li class="list-inline-item">
-                      <label for="expiry">Date d'expiration:</label>
+                      <label for="expiry">Date d'expiration:*</label>
                       <input type="text" class="form-control" name="expiry" id="expiry">
                     </li>
                     <li class="list-inline-item">
-                      <label for="crypto">Cryptogramme:</label>
+                      <label for="crypto">Cryptogramme:*</label>
                       <input type="text" class="form-control" name="crypto" id="crypto">
                     </li>
                     <li>
@@ -491,7 +487,10 @@
 
         <div class="col-s-6 col-12">
           <input type="checkbox" name="condition" id="condition">
-            <label for="condition" >J'accepte les conditions générales et reconnais mon obligation de paiement.</label>
+            <label for="condition" >J'accepte les conditions générales et reconnais mon obligation de paiement.*</label>
+        </div>
+        <div>
+              <small>Les champs marqués d’un astérisque * dans le formulaire ci-dessus sont obligatoires pour nous permettre d’enregistrer votre commande et la traiter.</small>
         </div>
 
         
