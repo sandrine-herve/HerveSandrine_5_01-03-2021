@@ -85,335 +85,338 @@
             Adresse de livraison
           </div>
           <div class="card-body">
-            <div class="form">
 
              <div class="gender" >
+              <div class="form-group">
                <input type="checkbox" id="female" name="female" value="2" aria-required="" required>
                <label for="female" class="mr-4 required-indicator">Mme</label>
                <input type="checkbox" id="male" name="male" value="1" aria-required="" required>
                <label for="male" class="required-indicator">Mr</label>
+              </div>
              </div>
 
              <div class="customer">
+              <div class="form-group">
               <ul class="list-inline">
                 <li class="list-inline-item" aria-required="">
-                  <label for="name">
-                    Nom:
-                  </label>
-                  <input type="text" name="name" id="name" required>
+                  <label for="name">Nom:</label>
+                  <input type="text" class="form-control col-12" name="name" id="name" required>
                </li>
                <li class="list-inline-item" aria-required="">
-                  <label for="surname">
-                    Prénom:
-                  </label>
-                  <input type="text" name="surname" id="surname" required>
+                  <label for="surname">Prénom:</label>
+                  <input type="text" class="form-control col-12" name="surname" id="surname" required>
                </li>
               </ul>
+              </div>
              </div>
 
              <div class="adress-shipping">
-               <label for="adress" class="required-indicator">
-                  Adresse:
-               </label>
-               <input type="text" name="adress" id="adress" value maxlength="50" required>
+              <div class="form-group">
+               <label for="adress" class="required-indicator">Adresse:</label>
+               <input type="text" name="adress" class="form-control col-12" id="adress" value maxlength="50" required>
+              </div>
              </div>
 
              <div class="complementary">
-               <label for="info">
-                Informations complémentaires:
-               </label>
-               <input type="text" name="info" id="info" value maxlength="50" >
+              <div class="form-group">
+               <label for="info">Informations complémentaires:</label>
+               <input type="text" name="info" class="form-control col-12" id="info" value maxlength="50" >
+              </div>
              </div>
              
              <div>
               <ul class="list-inline">
                 <li class="list-inline-item">
                   <div class="shipping-podtal">
-                    <label for="postal ">
-                      Code postal:
-                    </label>
-                    <input type="text" name="postal" id="postal" placeholder="ex:29300" required>
+                    <div class="form-group">
+                    <label for="postal ">Code postal:</label>
+                    <input type="text" name="postal" class="form-control col-12" id="postal" placeholder="ex:29300" required>
                   </div>
                 </li>
                 <li class="list-inline-item">
                   <div class="shipping-city">
-                    <label for="city">
-                      Ville:
-                    </label>
-                    <input type="text" name="city" id="city" required>
+                    <div class="form-group">
+                    <label for="city">Ville:</label>
+                    <input type="text" class="form-control col-12" name="city" id="city" required>
+                    </div>
                   </div>
                 </li>
               </ul>
              </div>
 
              <div>
-               <label for="country">
-                Pays:
-               </label>
-               <select name = "pays" id="country">
-<option value = "France" selected = "selected"> France </option>
+                <label for="country">Pays:</label>
+                <select class="form-control col-4" name = "pays" id="country">
+                <option value = "France" selected = "selected"> France </option>
 
-<option value = "Afghanistan"> Afghanistan </option>
-<option value = "Afrique_Centrale"> Afrique_Centrale </option>
-<option value = "Afrique_du_sud"> Afrique_du_Sud </option>
-<option value = "Albanie"> Albanie </ option>
-<option value = "Algerie"> Algérie </option>
-<option value = "Allemagne"> Allemagne </option>
-<option value = "Andorre"> Andorre </option>
-<option value = "Angola"> Angola </option>
-<option value = "Anguilla"> Anguilla </option>
-<option value = "Arabie_Saoudite"> Arabie_Saoudite </option>
-<option value = "Argentine"> Argentine </option>
-<option value = "Arménie"> Arménie </option>
-<option value = "Australie"> Australie </option>
-<option value = "Autriche"> Autriche </option>
-<option value = "Azerbaidjan"> Azerbaidjan </option>
+                <option value = "Afghanistan"> Afghanistan </option>
+                <option value = "Afrique_Centrale"> Afrique_Centrale </option>
+                <option value = "Afrique_du_sud"> Afrique_du_Sud </option>
+                <option value = "Albanie"> Albanie </ option>
+                <option value = "Algerie"> Algérie </option>
+                <option value = "Allemagne"> Allemagne </option>
+                <option value = "Andorre"> Andorre </option>
+                <option value = "Angola"> Angola </option>
+                <option value = "Anguilla"> Anguilla </option>
+                <option value = "Arabie_Saoudite"> Arabie_Saoudite </option>
+                <option value = "Argentine"> Argentine </option>
+                <option value = "Arménie"> Arménie </option>
+                <option value = "Australie"> Australie </option>
+                <option value = "Autriche"> Autriche </option>
+                <option value = "Azerbaidjan"> Azerbaidjan </option>
 
-<option value = "Bahamas"> Bahamas </option>
-<option value = "Bangladesh"> Bangladesh </option>
-<option value = "Barbade"> Barbade </option>
-<option value = "Bahrein"> Bahrein </ option>
-<option value = "Belgique"> Belgique </option>
-<option value = "Belize"> Belize </option>
-<option value = "Benin"> Bénin </option>
-<option value = "Bermudes"> Bermudes </option>
-<option value = "Bielorussie"> Bielorussie </option>
-<option value = "Bolivie"> Bolivie </option>
-<option value = "Botswana"> Botswana </ option>
-<option value = "Bhoutan"> Bhoutan </option>
-<option value = "Boznie_Herzegovine"> Boznie_Herzegovine </option>
-<option value = "Bresil"> Bresil </option>
-<option value = "Brunei"> Brunei </option>
-<option value = "Bulgarie"> Bulgarie </option>
-<option value = "Burkina_Faso"> Burkina_Faso </option>
-<option value = "Burundi"> Burundi </ option>
+                <option value = "Bahamas"> Bahamas </option>
+                <option value = "Bangladesh"> Bangladesh </option>
+                <option value = "Barbade"> Barbade </option>
+                <option value = "Bahrein"> Bahrein </ option>
+                <option value = "Belgique"> Belgique </option>
+                <option value = "Belize"> Belize </option>
+                <option value = "Benin"> Bénin </option>
+                <option value = "Bermudes"> Bermudes </option>
+                <option value = "Bielorussie"> Bielorussie </option>
+                <option value = "Bolivie"> Bolivie </option>
+                <option value = "Botswana"> Botswana </ option>
+                <option value = "Bhoutan"> Bhoutan </option>
+                <option value = "Boznie_Herzegovine"> Boznie_Herzegovine </option>
+                <option value = "Bresil"> Bresil </option>
+                <option value = "Brunei"> Brunei </option>
+                <option value = "Bulgarie"> Bulgarie </option>
+                <option value = "Burkina_Faso"> Burkina_Faso </option>
+                <option value = "Burundi"> Burundi </ option>
 
-<option value = "Caïman"> Caïman </option>
-<option value = "Cambodge"> Cambodge </option>
-<option value = "Cameroun"> Cameroun </option>
-<option value = "Canada"> Canada </ option>
-<option value = "Canaries"> Canaries </option>
-<option value = "Cap_vert"> Cap_Vert </option>
-<option value = "Chili"> Chili </option>
-<option value = "Chine"> Chine </option>
-<option value = "Chypre"> Chypre </option>
-<option value = "Colombie"> Colombie </option>
-<option value = "Comores"> Colombie </option>
-<option value = "Congo"> Congo </option>
-<option value = "Congo_democratique"> Congo_democratique </option>
-<option value = "Cook"> Cook </option>
-<option value = "Coree_du_Nord"> Coree_du_Nord </option>
-<option value = "Coree_du_Sud"> Coree_du_Sud </option>
-<option value = "Costa_Rica"> Costa_Rica </option>
-<option value = "Cote_d_Ivoire"> Côte_d_Ivoire </ option>
-<option value = "Croatie"> Croatie </option>
-<option value = "Cuba"> Cuba </option>
+                <option value = "Caïman"> Caïman </option>
+                <option value = "Cameroun"> Cameroun </option>
+                <option value = "Canada"> Canada </ option>
+                <option value = "Canaries"> Canaries </option>
+                <option value = "Cap_vert"> Cap_Vert </option>
+                <option value = "Chine"> Chine </option>
+                <option value = "Chypre"> Chypre </option>
+                <option value = "Colombie"> Colombie </option>
+                <option value = "Comores"> Colombie </option>
+                <option value = "Congo"> Congo </option>
+                <option value = "Congo_democratique"> Congo_democratique </option>
+                <option value = "Cook"> Cook </option>
+                <option value = "Coree_du_Nord"> Coree_du_Nord </option>
+                <option value = "Coree_du_Sud"> Coree_du_Sud </option>
+                <option value = "Cuba"> Cuba </option>
+                <option value = "Costa_Rica"> Costa_Rica </option>
+                <option value = "Croatie"> Croatie </option>
 
-<option value = "Danemark"> Danemark </option>
-<option value = "Djibouti"> Djibouti </option>
-<option value = "Dominique"> Dominique </option>
+                <option value = "Danemark"> Danemark </option>
+                <option value = "Djibouti"> Djibouti </option>
+                <option value = "Dominique"> Dominique </option>
 
-<option value = "Egypte"> Egypte </option>
-<option value = "Emirats_Arabes_Unis"> Emirats_Arabes_Unis </option>
-<option value = "Equateur"> Equateur </option>
-<option value = "Erythree"> Erythree </ option>
-<option value = "Espagne"> Espagne </option>
-<option value = "Estonie"> Estonie </option>
-<option value = "Etats_Unis"> Etats_Unis </option>
-<option value = "Ethiopie"> Ethiopie </option>
+                <option value = "Egypte"> Egypte </option>
+                <option value = "Emirats_Arabes_Unis"> Emirats_Arabes_Unis </option>
+                <option value = "Equateur"> Equateur </option>
+                <option value = "Erythree"> Erythree </ option>
+                <option value = "Espagne"> Espagne </option>
+                <option value = "Estonie"> Estonie </option>
+                <option value = "Etats_Unis"> Etats_Unis </option>
+                <option value = "Ethiopie"> Ethiopie </option>
 
-<option value = "Falkland"> Falkland </option>
-<option value = "Feroe"> Feroe </option>
-<option value = "Fidji"> Fidji </option>
-<option value = "Finlande"> Finlande </ option>
-<option value = "France"> France </option>
+                <option value = "Falkland"> Falkland </option>
+                <option value = "Feroe"> Feroe </option>
+                <option value = "Fidji"> Fidji </option>
+                <option value = "Finlande"> Finlande </ option>
+                <option value = "France"> France </option>
 
-<option value = "Gabon"> Gabon </option>
-<option value = "Gambie"> Gambie </option>
-<option value = "Georgie"> Georgie </option>
-<option value = "Ghana"> Ghana </ option>
-<option value = "Gibraltar"> Gibraltar </option>
-<option value = "Grece"> Grece </option>
-<option value = "Grenade"> Grenade </option>
-<option value = "Groenland"> Groenland </option>
-<option value = "Guadeloupe"> Guadeloupe </option>
-<option value = "Guam"> Guam </option>
-<option value = "Guatemala"> Guatemala </option>
-<option value = "Guernesey"> Guernesey </option>
-<option value = "Guinee"> Guinee </option>
-<option value = "Guinee_Bissau"> Guinee_Bissau </option>
-<option value = "Guinee equatoriale"> Guinee_Equatoriale </option>
-<option value = "Guyana"> Guyane </option>
-<option value = "Guyane_Francaise"> Guyane_Francaise </option>
+                <option value = "Gabon"> Gabon </option>
+                <option value = "Gambie"> Gambie </option>
+                <option value = "Georgie"> Georgie </option>
+                <option value = "Ghana"> Ghana </ option>
+                <option value = "Gibraltar"> Gibraltar </option>
+                <option value = "Grece"> Grece </option>
+                <option value = "Grenade"> Grenade </option>
+                <option value = "Groenland"> Groenland </option>
+                <option value = "Guadeloupe"> Guadeloupe </option>
+                <option value = "Guam"> Guam </option>
+                <option value = "Guatemala"> Guatemala </option>
+                <option value = "Guernesey"> Guernesey </option>
+                <option value = "Guinee"> Guinee </option>
+                <option value = "Guinee_Bissau"> Guinee_Bissau </option>
+                <option value = "Guinee equatoriale"> Guinee_Equatoriale </option>
+                <option value = "Guyana"> Guyane </option>
+                <option value = "Guyane_Francaise"> Guyane_Francaise </option>
 
-<option value = "Haïti"> Haïti </option>
-<option value = "Hawaii"> Hawaï </option>
-<option value = "Honduras"> Honduras </option>
-<option value = "Hong_Kong"> Hong_Kong </ option>
-<option value = "Hongrie"> Hongrie </option>
+                <option value = "Haïti"> Haïti </option>
+                <option value = "Hawaii"> Hawaï </option>
+                <option value = "Honduras"> Honduras </option>
+                <option value = "Hong_Kong"> Hong_Kong </ option>
+                <option value = "Hongrie"> Hongrie </option>
 
-<option value="Inde">Inde </option>
-<option value="Indonesie">Indonesie </option>
-<option value="Iran">Iran </option>
-<option value="Iraq">Iraq </option>
-<option value="Irlande">Irlande </option>
-<option value="Islande">Islande </option>
-<option value="Israel">Israel </option>
-<option value="Italie">italie </option>
+                <option value="Inde">Inde </option>
+                <option value="Iran">Iran </option>
+                <option value="Iraq">Iraq </option>
+                <option value="Irlande">Irlande </option>
+                <option value="Islande">Islande </option>
+                <option value="Israel">Israel </option>
+                <option value="Italie">italie </option>
 
-<option value = "Jamaique"> Jamaique </option>
-<option value = "Jan Mayen"> Jan Mayen </option>
-<option value = "Japon"> Japon </option>
-<option value = "Jersey"> Jersey </option>
-<option value = "Jordanie"> Jordanie </option>
+                <option value = "Jamaique"> Jamaique </option>
+                <option value = "Jan Mayen"> Jan Mayen </option>
+                <option value = "Japon"> Japon </option>
+                <option value = "Jersey"> Jersey </option>
+                <option value = "Jordanie"> Jordanie </option>
 
-<option value = "Kazakhstan"> Kazakhstan </option>
-<option value = "Kenya"> Kenya </option>
-<option value = "Kirghizstan"> Kirghizistan </option>
-<option value = "Kiribati"> Kiribati </ option>
-<option value = "Koweit"> Koweit </option>
+                <option value = "Kazakhstan"> Kazakhstan </option>
+                <option value = "Kenya"> Kenya </option>
+                <option value = "Kirghizstan"> Kirghizistan </option>
+                <option value = "Kiribati"> Kiribati </ option>
+                <option value = "Koweit"> Koweit </option>
 
-<option value = "Laos"> Laos </option>
-<option value = "Lesotho"> Lesotho </option>
-<option value = "Lettonie"> Lettonie </option>
-<option value = "Liban"> Liban </ option>
-<option value = "Liberia"> Liberia </option>
-<option value = "Liechtenstein"> Liechtenstein </option>
-<option value = "Lituanie"> Lituanie </option>
-<option value = "Luxembourg"> Luxembourg </option>
-<option value = "Lybie"> Lybie </option>
+                <option value = "Laos"> Laos </option>
+                <option value = "Lesotho"> Lesotho </option>
+                <option value = "Lettonie"> Lettonie </option>
+                <option value = "Liban"> Liban </ option>
+                <option value = "Liberia"> Liberia </option>
+                <option value = "Liechtenstein"> Liechtenstein </option>
+                <option value = "Lituanie"> Lituanie </option>
+                <option value = "Luxembourg"> Luxembourg </option>
+                <option value = "Lybie"> Lybie </option>
 
-<option value = "Macao"> Macao </option>
-<option value = "Macedoine"> Macédoine </option>
-<option value = "Madagascar"> Madagascar </option>
-<option value = "Madère"> Madère </ option>
-<option value = "Malaisie"> Malaisie </option>
-<option value = "Malawi"> Malawi </option>
-<option value = "Maldives"> Maldives </option>
-<option value = "Mali"> Mali </option>
-<option value = "Malte"> Malte </option>
-<option value = "Man"> Homme </option>
-<option value = "Mariannes du Nord"> Mariannes du Nord </ option>
-<option value = "Maroc"> Maroc </option>
-<option value = "Marshall"> Marshall </option>
-<option value = "Martinique"> Martinique </option>
-<option value = "Maurice"> Maurice </option>
-<option value = "Mauritanie"> Mauritanie </option>
-<option value = "Mayotte"> Mayotte </option>
-<option value = "Mexique"> Mexique </ option>
-<option value = "Micronésie"> Micronésie </option>
-<option value = "Midway"> Midway </option>
-<option value = "Moldavie"> Moldavie </option>
-<option value = "Monaco"> Monaco </option>
-<option value = "Mongolie"> Mongolie </option>
-<option value = "Montserrat"> Montserrat </option>
-<option value = "Mozambique">Mozambique </option>
+                <option value = "Macao"> Macao </option>
+                <option value = "Macedoine"> Macédoine </option>
+                <option value = "Madagascar"> Madagascar </option>
+                <option value = "Madère"> Madère </ option>
+                <option value = "Malaisie"> Malaisie </option>
+                <option value = "Malawi"> Malawi </option>
+                <option value = "Maldives"> Maldives </option>
+                <option value = "Mali"> Mali </option>
+                <option value = "Malte"> Malte </option>
+                <option value = "Man"> Homme </option>
+                <option value = "Mariannes du Nord"> Mariannes du Nord </ option>
+                <option value = "Maroc"> Maroc </option>
+                <option value = "Marshall"> Marshall </option>
+                <option value = "Martinique"> Martinique </option>
+                <option value = "Maurice"> Maurice </option>
+                <option value = "Mauritanie"> Mauritanie </option>
+                <option value = "Mayotte"> Mayotte </option>
+                <option value = "Mexique"> Mexique </ option>
+                <option value = "Micronésie"> Micronésie </option>
+                <option value = "Moldavie"> Moldavie </option>
+                <option value = "Monaco"> Monaco </option>
+                <option value = "Mongolie"> Mongolie </option>
+                <option value = "Montserrat"> Montserrat </option>
+                <option value = "Mozambique">Mozambique </option>
 
-<option value = "Namibie"> Namibie </option>
-<option value = "Nauru"> Nauru </option>
-<option value = "Nepal"> Népal </option>
-<option value = "Nicaragua"> Nicaragua </ option>
-<option value = "Niger"> Niger </option>
-<option value = "Nigeria"> Nigeria </option>
-<option value = "Niue"> Niue </option>
-<option value = "Norfolk"> Norfolk </option>
-<option value = "Norvege"> Norvege </option>
-<option value = "Nouvelle_Caledonie"> Nouvelle_Caledonie </option>
-<option value = "Nouvelle_Zelande">Nouvelle_Zelande </option>
+                <option value = "Namibie"> Namibie </option>
+                <option value = "Nauru"> Nauru </option>
+                <option value = "Nepal"> Népal </option>
+                <option value = "Nicaragua"> Nicaragua </ option>
+                <option value = "Niger"> Niger </option>
+                <option value = "Niue"> Niue </option>
+                <option value = "Norfolk"> Norfolk </option>
+                <option value = "Norvege"> Norvege </option>
+                <option value = "Nouvelle_Caledonie"> Nouvelle_Caledonie </option>
+                <option value = "Nouvelle_Zelande">Nouvelle_Zelande </option>
 
-<option value="Oman">Oman </option>
-<option value="Ouganda">Ouganda </option>
-<option value="Ouzbekistan">Ouzbekistan </option>
+                <option value="Oman">Oman </option>
+                <option value="Ouganda">Ouganda </option>
+                <option value="Ouzbekistan">Ouzbekistan </option>
 
-<option value = "Pakistan"> Pakistan </option>
-<option value = "Palau"> Palau </option>
-<option value = "Palestine"> Palestine </option>
-<option value = "Panama"> Panama </ option>
-<option value = "Papouasie_Nouvelle_Guinee"> Papouasie_Nouvelle_Guinee </option>
-<option value = "Paraguay"> Paraguay </option>
-<option value = "Pays_Bas"> Pays_Bas </option>
-<option value = "Perou"> Pérou </option>
-<option value = "Philippines"> Philippines </option>
-<option value = "Pologne"> Pologne </option>
-<option value = "Polynésie "> Polynésie </option>
-<option value =" Porto_Rico "> Porto_Rico </option>
-<option value =" Portugal "> Portugal </option>
+                <option value = "Pakistan"> Pakistan </option>
+                <option value = "Palau"> Palau </option>
+                <option value = "Palestine"> Palestine </option>
+                <option value = "Panama"> Panama </ option>
+                <option value = "Papouasie_Nouvelle_Guinee"> Papouasie_Nouvelle_Guinee </option>
+                <option value = "Paraguay"> Paraguay </option>
+                <option value = "Pays_Bas"> Pays_Bas </option>
+                <option value = "Perou"> Pérou </option>
+                <option value = "Philippines"> Philippines </option>
+                <option value = "Pologne"> Pologne </option>
+                <option value = "Polynésie "> Polynésie </option>
+                <option value =" Porto_Rico "> Porto_Rico </option>
+                <option value =" Portugal "> Portugal </option>
 
-<option value = "Qatar"> Qatar </option>
+                <option value = "Qatar"> Qatar </option>
 
-<option value = "Republique_Dominicaine"> Republique_Dominicaine </option>
-<option value = "Republique_Tcheque"> Republique_Tcheque </option>
-<option value = "Reunion"> Réunion </option>
-<option value = "Roumanie"> Roumanie </ option>
-<option value = "Royaume_Uni"> Royaume_Uni </option>
-<option value = "Russie"> Russie </option>
-<option value = "Rwanda"> Rwanda </option>
+                <option value = "Republique_Dominicaine"> Republique_Dominicaine </option>
+                <option value = "Republique_Tcheque"> Republique_Tcheque </option>
+                <option value = "Reunion"> Réunion </option>
+                <option value = "Roumanie"> Roumanie </ option>
+                <option value = "Royaume_Uni"> Royaume_Uni </option>
+                <option value = "Russie"> Russie </option>
+                <option value = "Rwanda"> Rwanda </option>
 
-<option value = "Sahara Occidental"> Sahara Occidental </option>
-<option value = "Sainte_Lucie"> Sainte_Lucie </option>
-<option value = "Saint_Marin"> Saint_Marin </option>
-<option value = "Salomon"> Salomon </option>
-<option value = "Salvador"> Salvador </option>
-<option value = "Samoa_Occidentales"> Samoa_Occidentales </option>
-<option value = "Samoa_Americaine"> Samoa_Americaine </option>
-<option value = "Sao_Tome_et_Principe" > Sao_Tome_et_Principe </option>
-<option value = "Sénégal"> Sénégal </option>
-<option value = "Seychelles"> Seychelles </option>
-<option value = "Sierra Leone"> Sierra Leone </option>
-<option value = "Singapour"> Singapour </option>
-<option value = "Slovaquie"> Slovaquie </option>
-<option value = "Slovenie"> Slovénie </option>
-<option value = "Somalie"> Somalie </option>
-<option value = "Soudan"> Soudan </ option>
-<option value = "Sri_Lanka"> Sri_Lanka </option>
-<option value = "Suede"> Suede </option>
-<option value = "Suisse"> Suisse </option>
-<option value = "Surinam"> Surinam </option>
-<option value = "Swaziland"> Swaziland </option>
-<option value = "Syrie"> Syrie </option>
+                <option value = "Sahara Occidental"> Sahara Occidental </option>
+                <option value = "Sainte_Lucie"> Sainte_Lucie </option>
+                <option value = "Saint_Marin"> Saint_Marin </option>
+                <option value = "Salvador"> Salvador </option>
+                <option value = "Samoa_Occidentales"> Samoa_Occidentales </option>
+                <option value = "Samoa_Americaine"> Samoa_Americaine </option>
+                <option value = "Sao_Tome_et_Principe" > Sao_Tome_et_Principe </option>
+                <option value = "Sénégal"> Sénégal </option>
+                <option value = "Seychelles"> Seychelles </option>
+                <option value = "Sierra Leone"> Sierra Leone </option>
+                <option value = "Singapour"> Singapour </option>
+                <option value = "Slovaquie"> Slovaquie </option>
+                <option value = "Slovenie"> Slovénie </option>
+                <option value = "Somalie"> Somalie </option>
+                <option value = "Soudan"> Soudan </ option>
+                <option value = "Sri_Lanka"> Sri_Lanka </option>
+                <option value = "Suede"> Suede </option>
+                <option value = "Suisse"> Suisse </option>
+                <option value = "Surinam"> Surinam </option>
+                <option value = "Swaziland"> Swaziland </option>
+                <option value = "Syrie"> Syrie </option>
 
-<option value = "Tadjikistan"> Tadjikistan </option>
-<option value = "Taiwan"> Taiwan </option>
-<option value = "Tonga"> Tonga </option>
-<option value = "Tanzanie"> Tanzanie </ option>
-<option value = "Tchad"> Tchad </option>
-<option value = "Thailande"> Thailande </option>
-<option value = "Tibet"> Tibet </option>
-<option value = "Timor_Oriental"> Timor_Oriental </option>
-<option value = "Togo"> Togo </option>
-<option value = "Trinite_et_Tobago"> Trinite_et_Tobago </option>
-<option value = "Tristan da cunha "> Tristan de cuncha </option>
-<option value =" Tunisie "> Tunisie </option>
-<option value =" Turkmenistan "> Turmenistan </option>
-<option value = "Turquie"> Turquie </option>
+                <option value = "Tadjikistan"> Tadjikistan </option>
+                <option value = "Taiwan"> Taiwan </option>
+                <option value = "Tonga"> Tonga </option>
+                <option value = "Tanzanie"> Tanzanie </ option>
+                <option value = "Tchad"> Tchad </option>
+                <option value = "Thailande"> Thailande </option>
+                <option value = "Tibet"> Tibet </option>
+                <option value = "Timor_Oriental"> Timor_Oriental </option>
+                <option value = "Togo"> Togo </option>
+                <option value = "Trinite_et_Tobago"> Trinite_et_Tobago </option>
+                <option value = "Tristan da cunha "> Tristan de cuncha </option>
+                <option value =" Tunisie "> Tunisie </option>
+                <option value =" Turkmenistan "> Turmenistan </option>
+                <option value = "Turquie"> Turquie </option>
 
-<option value = "Ukraine"> Ukraine </option>
-<option value = "Uruguay"> Uruguay </option>
+                <option value = "Ukraine"> Ukraine </option>
+                <option value = "Uruguay"> Uruguay </option>
 
-<option value = "Vanuatu"> Vanuatu </option>
-<option value = "Vatican"> Vatican </option>
-<option value = "Venezuela"> Venezuela </option>
-<option value = "Vierges_Americaines"> Vierges_Americaines </ option>
-<option value = "Vierges_Britanniques"> Vierges_Britanniques </option>
-<option value = "Vietnam"> Vietnam </option>
+                <option value = "Vanuatu"> Vanuatu </option>
+                <option value = "Vatican"> Vatican </option>
+                <option value = "Venezuela"> Venezuela </option>
+                <option value = "Vierges_Americaines"> Vierges_Americaines </ option>
+                <option value = "Vierges_Britanniques"> Vierges_Britanniques </option>
+                <option value = "Vietnam"> Vietnam </option>
 
-<option value = "Wake"> Wake </option>
-<option value = "Wallis et Futuma"> Wallis et Futuma </option>
+                <option value = "Wake"> Wake </option>
+                <option value = "Wallis et Futuma"> Wallis et Futuma </option>
 
-<option value = "Yemen"> Yémen </option>
-<option value = "Yougoslavie"> Yougoslavie </option>
+                <option value = "Yemen"> Yémen </option>
+                <option value = "Yougoslavie"> Yougoslavie </option>
 
-<option value = "Zambie"> Zambie </option>
-<option value = "Zimbabwe"> Zimbabwe </option>
+                <option value = "Zambie"> Zambie </option>
+                <option value = "Zimbabwe"> Zimbabwe </option>
 
-</select>
+                </select>
 
-            <div>
-                <label for="phone">
-                  Mobile:
-                </label>
-                <input type="text" name="phone" id="phone">
+            <div class="form-group">
+              <label for="phone">Mobile</label>
+              <input type="text" class="form-control col-4" id="phone" aria-describedby="emailHelp" placeholder="Numéro de mobile">
             </div>
+
+            <div class="form-group">
+              <label for="Email">Adresse mail</label>
+              <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Entrer votre email">
+            </div>
+
+            <div class="form-group">
+              <label for="Password">Mot de passe</label>
+              <input type="password" class="form-control" id="Password" placeholder="Mot de passe">
+            </div>
+
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="remember">
+              <label class="form-check-label" for="exampleCheck1">Se souvenir de moi</label>
+            </div>
+            
 
             <div>
               <input type="checkbox" name="shipping-adress-billing" id="billing" name="billing" checked>
@@ -421,50 +424,50 @@
             </div>
 
             <div>
-              <p>Les champs marqués d’un astérisque * dans le formulaire ci-dessus sont obligatoires pour nous permettre d’enregistrer votre commande et la traiter.</p>
+              <small>Les champs marqués d’un astérisque * dans le formulaire ci-dessus sont obligatoires pour nous permettre d’enregistrer votre commande et la traiter.</small>
             </div>
-
+            </form>
             </div>
           </div>
         </div>
+        
         <!-- /.card -->
 
-      </div>
-
-      <div class="card card-outline-third my-4">
+        <div class="card card-outline-third my-4">
           <div class="card-header">
             Moyen de paiement
           </div>
            <div class="card-body">
-             <div class="form-payement">
-
+             <div class="form-payement ">
               <div class="credit">
-                <input type="checkbox" name="credit-card" id="credit-card">
-                <label for="credit-card">Carte bancaire</label>
-                <br>
-                <label for="id-credit-card">Numméro de carte:</label>
-                <input type="text" name="id-credit-card" id="id-credit-card">
-                <ul class="list-inline">
-                  <li class="list-inline-item">
-                    <label for="expiry">Date d'expiration:</label>
-                    <input type="text" name="expiry" id="expiry">
-                  </li>
-                  <li class="list-inline-item">
-                    <label for="crypto">Cryptogramme:</label>
-                    <input type="text" name="crypto" id="crypto">
-                  </li>
-                  <li>
-                    <input type="checkbox" name="card-memory" id="card-memory" checked="">
-                    <label for="card-memory">Mémoriser ma carte</label>
-                  </li>
-                </ul>
+                <div class="form-group">
+                  <input type="checkbox" name="credit-card" id="credit-card">
+                  <label for="credit-card">Carte bancaire</label>
+                  <br>
+                  <label for="id-credit-card">Numméro de carte:</label>
+                  <input type="text" class="form-control" name="id-credit-card" id="id-credit-card">
+                  <ul class="list-inline">
+                    <li class="list-inline-item">
+                      <label for="expiry">Date d'expiration:</label>
+                      <input type="text" class="form-control" name="expiry" id="expiry">
+                    </li>
+                    <li class="list-inline-item">
+                      <label for="crypto">Cryptogramme:</label>
+                      <input type="text" class="form-control" name="crypto" id="crypto">
+                    </li>
+                    <li>
+                      <input type="checkbox" name="card-memory" id="card-memory" checked="">
+                      <label for="card-memory">Mémoriser ma carte</label>
+                    </li>
+                  </ul>
+                </div>
               </div>
               <hr>
               <div class="paypal">
                 <input type="checkbox" name="paypal" id="paypal">
                 <label for="paypal">Paypal</label>
                 <br>
-                <a href="https://www.paypal.com/" class="btn btn-success mt-5">Payer avec Paypal</a>
+                <a href="https://www.paypal.com/" class="btn btn-success mt-3">Payer avec Paypal</a>
               </div>
               <hr>
               <div class="gift-card">
@@ -473,34 +476,33 @@
                 <ul class="list-inline">
                   <li class="list-inline-item">
                     <label for="number-gift">Numéro de carte cadeau:</label>
-                    <input type="text" name="number-gift" id="number-gift">
+                    <input type="text" class="form-control" name="number-gift" id="number-gift">
                   </li>
                   <li class="list-inline-item">
                     <label for="amount">Montant:</label>
-                    <input type="text" name="amount" id="amount">
+                    <input type="text" class="form-control" name="amount" id="amount">
                   </li>
                 </ul>
                 <button type="button" class="btn btn-success">Appliquer à ma carte</button>
               </div>
-
              </div>
            </div>
-      </div>
-          <a href="gratitude.html"><button type="button" class="btn btn-success col-12 my-5">Acheter ma commande!</button></a>
-        
-    </div>
-
+        </div>
+      <a href="gratitude.html"><button type="button" class="btn btn-success col-12 my-5">Acheter ma commande!</button></a>  
   </div>
+
+</div>
   <!-- /.container -->
 
+
   <!-- Footer -->
-   <footer class="py-5 bg-dark">
+    <footer class="col-12 py-5 bg-dark">
     <div class="container">
-        <ul class="list-inline col-12 text-center">
-          <li class="list-inline-item"><a href="#">A propos</a></li>
-          <li class="list-inline-item"><a href="#">Contact</a></li>
-          <li class="list-inline-item"><a href="#">Recrutement</a></li>
-          <li class="list-inline-item"><a href="#">Conditions d'utilisation</a></li>
+        <ul class="text-white bg-dark list-inline col-12 text-center">
+          <li class="list-inline-item "><a href="#" class="text-white ">A propos</a></li>-
+          <li class="list-inline-item "><a href="#" class="text-white ">Contact</a></li>-
+          <li class="list-inline-item "><a href="#" class="text-white ">Recrutement</a></li>-
+          <li class="list-inline-item "><a href="#" class="text-white ">Conditions d'utilisation</a></li>
         </ul>
     </div>
   </footer>
