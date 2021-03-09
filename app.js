@@ -3,8 +3,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
 
-const cameraRoutes = require('./routes/camera');
-const teddyRoutes = require('./routes/teddy');
+//const cameraRoutes = require('./routes/camera');
+//const teddyRoutes = require('./routes/teddy');
 const furnitureRoutes = require('./routes/furniture');
 
 const app = express();
@@ -31,8 +31,8 @@ app.use('/images', express.static(path.join(__dirname, 'images')));
 
 app.use(bodyParser.json());
 
-app.use('/api/cameras', cameraRoutes);
-app.use('/api/teddies', teddyRoutes);
+//app.use('/api/cameras', cameraRoutes);
+//app.use('/api/teddies', teddyRoutes);
 app.use('/api/furniture', furnitureRoutes);
 
 module.exports = app;
