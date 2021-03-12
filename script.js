@@ -30,6 +30,35 @@ class Product{
         );
       }
 
+    function carousel(data){
+
+      let containerCarousel = document.createElement('div');
+      containerCarousel.setAttribute('class','container-carousel col-lg-9');
+      containerCarousel.innerHTML();
+      
+    for ( let product of data){
+        //Ajouter un div pour la premiere image qui lance le carousel avec la class carousel-item active.
+        let carourelItemActive = document.createElement('div');
+        carourelItemActive.setAttribute('class','carousel-item active');
+        carouselInner.appendChild(carourelItemActive);
+        //Ajouter une image dans carousel.
+        let imageCarousel = document.createElement('img');
+        carourelItemActive.appendChild(imageCarousel);
+        imageCarousel.src = product.imageUrl;
+        imageCarousel.alt = product.name;
+
+        let carourelItem = document.createElement('div');
+        carourelItem.setAttribute('class','carousel-item');
+        carouselInner.appendChild(carourelItem);
+
+        let imageCarousel1 = document.createElement('img');
+        carourelItemActive.appendChild(imageCarousel1);
+        imageCarousel1.src = product.imageUrl;
+        imageCarousel.alt = product.name;
+
+    }
+      }
+
     function showProducts(data){
 
         //ajouter une balise <main>.
@@ -46,7 +75,7 @@ class Product{
       for (let product of data){
         //englober a et ma div elt dans une div.
         let div1 = document.createElement('div');
-        div1.setAttribute('class','card h-100 col-lg-4 col-md-6 mb-4');
+        div1.setAttribute('class','card h-100 col-lg-3 col-md-6 mx-4 my-4 shadow');
         section.appendChild(div1);
 
         //Englober ma div dans un lien qui envoie vers product-1.html.
@@ -97,7 +126,10 @@ class Product{
         
       }
     
+    
 
+
+  
       //response.json().then(function(data){
         //console.log(data);
         //showProducts(data);

@@ -9928,5 +9928,9 @@ h3 {
     border-color: #dee2e6;
   }
 }
+footer {
+  position: relative;
+  top: 2000px;
+}
 
 /*# sourceMappingURL=style.css.map */
