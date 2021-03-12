@@ -52,7 +52,7 @@ class Product{
 
       
     for ( let i = 1; i < data.length; i++ ){
-        
+        let product = data[i];
         let carouselItem = document.createElement('div');
         carouselItem.setAttribute('class','carousel-item');
         carouselInner.appendChild(carouselItem);
@@ -73,7 +73,7 @@ class Product{
  
         //Ajouter une <section> "fourniture" dans <main>.
         let section = document.createElement('section');
-        section.setAttribute('class','fourniture  row col-12');
+        section.setAttribute('class','fourniture row col-12');
         section.setAttribute('id','result');
         main.appendChild(section);
       
