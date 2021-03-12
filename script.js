@@ -1,4 +1,118 @@
- $('.input-group.date').datepicker({format: "dd.mm.yyyy"});
+//Contenu dans mon object Product.
+class Product{
+  constructor(Id,Name, Price, Description, imageURL){
+    this.id = Id;
+    this.name = Name;
+    this.price = Price;
+    this.description = Description;
+    this.imageUrl = imageUrl;
+  }
+ }
+
+
+//exécute la fonction lorsque le document est chargé.
+//Intégre les éléments dont j'ai besoin.
+
+
+
+       window.onload = function(response) {
+        
+        fetch('http://localhost:3000/api/furniture').then(function(response){
+            if(response.ok){
+              response.json().then(function(data){
+              
+                showProducts(data);
+              } 
+              );
+            }
+
+          }
+        );
+      }
+
+    function showProducts(data){
+
+        //ajouter une balise <main>.
+        let main = document.createElement('main');
+        document.body.appendChild(main);
+ 
+        //Ajouter une <section> "fourniture" dans <main>.
+        let section = document.createElement('section');
+        section.setAttribute('class','fourniture  row col-12');
+        section.setAttribute('id','result');
+        main.appendChild(section);
+      
+
+      for (let product of data){
+        //englober a et ma div elt dans une div.
+        let div1 = document.createElement('div');
+        div1.setAttribute('class','card h-100 col-lg-4 col-md-6 mb-4');
+        section.appendChild(div1);
+
+        //Englober ma div dans un lien qui envoie vers product-1.html.
+        let a = document.createElement('a');
+        a.href = 'product-1.html';
+        div1.appendChild(a);
+
+        //Ajouter une <div> qui contient mes éléments.
+        let div = document.createElement('div');
+        div.setAttribute('class','elt card-body');
+        a.appendChild(div);
+
+
+        //Ajouter une <img> dans <section>.
+        let image = document.createElement('img');
+        image.setAttribute('class','card-img-top');
+        div.appendChild(image);
+        image.src = product.imageUrl;
+        image.alt = product.name;
+
+        //Ajouter une titre <h2> dans <section>.
+        let heading_card = document.createElement('h2');
+        let heading_card_text = document.createTextNode(product.name);
+        heading_card.setAttribute('class','card-title');
+        div.appendChild(heading_card_text);
+        div.appendChild(heading_card);
+
+        //Ajouter un paragraphe pour la description.
+        let para = document.createElement('p');
+        para.setAttribute('class','description card-text');
+        let para_text = document.createTextNode(product.description);
+        para.appendChild(para_text);
+        div.appendChild(para);
+
+        //Ajouter un paragraphe pour le prix.
+        let price = document.createElement('p');
+        price.setAttribute('class','price card-text');
+        let price_text = document.createTextNode(product.price + "€");
+        price.appendChild(price_text);
+        div.appendChild(price);
+
+        //Ajouter une div footer card pour ajouter des icône.
+        let div10 = document.createElement('div');
+        div10.setAttribute('class','card-footer text-center');
+        div.appendChild(div10);
+       
+}
+        
+      }
+    
+
+      //response.json().then(function(data){
+        //console.log(data);
+        //showProducts(data);
+        //var result = document.getElementById('result');
+        //result.innerHTML = data.toString();
+      //});
+     //} )
+
+//Récupérer l'image du produit choisit, URL d'affichage de l'image résultante et objet produit sur showProduct () 
+//pour enfin l'afficher.
+
+
+
+
+
 
 
 
@@ -35,65 +149,25 @@ function addCart(cartEvent){//je veux que cette fonction ajoute le produit chois
 }
 
 
-const cart = document.getElementById('add-cart-1');
-cart.addEventListener('click', addCart(cartEvent){
-
-};
+//const cart = document.getElementById('add-cart-1');
+//cart.addEventListener('click', addCart(cartEvent));
 
 
-class Order{
-	constructor(product){
-		this.totalPrice = 0;
-		this.customer = null;
-		this.payement = null;
-		this.products = [];
-	}
+
 	//constructor(newTotalPrice, newCustomer, newPayement){
 		//this.totalPrice = newTotalPrice;
 		//this.customer = newCustomer;
 		//this.payement = newPayement;
 		//this.products = [];
 	//}
-}
+
 
 
 
  //page panier,En haut de page, l'informaton du produit et du prix + résumé + photo de celui ci apparait en haut de page=> faire une card avec
  // un objet JS qui montre l'objet choisit par l'utilisateur.
- class Product{
- 	constructor(newId,newName, newPrice, newDescription, newimageURL){
- 		this.id = newId;
-        this.name = newName;
- 		this.price = newPrice;
-        this.description = newDescription;
-        this.imageURL = newimageURL;
- 	}
- }
+ 
 
-let tableHaute = new Product(
-  'Table haute en bois', 
-  125,
-  'la table haute lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!')
-
-let table = new Product(
-	'Table',
-	250,
-	'Table en chêne lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.')
-
-let tableRonde = new Product(
-	'Table ronde',
-	100,
-	'Table ronde lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!')
-
-let etagere = new Product(
-	'Etagère',
-	120,
-	'Etagère en bois lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!')
-
-let chaiseVintage = new Product(
-	'Chaise vinage'
-	140,
-	'Chaise vintage lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.')
 
 
 
@@ -116,42 +190,16 @@ function aléatoire(){
 	return' Votre identifiant de commande:' +Date.now()+ Math.round(Math.random()*1000000);
 }
 
-document.getElementById('order-id').innerHTML = aléatoire();
+//document.getElementById('order-id').innerHTML = aléatoire();
 
 //3) Un résumé qui change en fonction du produit choisit de sa commande est créé. Photo change en fonction du produit choisit 
 //+ prix total commande en fonction du produit choisit.
 
 
-//Construire et envoyer un requête HTTP avec AJAX.
 
-var request = new XMLHttpRequest();
-request.onreadystatechange = function(){
-    if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-        var response = JSON.parse(this.responseText);
-        console.log(response.current_condition.condition);
-    }
-};
- request.open("GET", "http://localhost:3000/api/furniture");
- request.send();
+ 
 
-
-//const btn = document.getElementById('ask-weather');
-// btn.addEventListener('click', askweather);
-
-//function askweather (){
-  
-  //var request = new XMLHttpRequest();
-//request.onreadystatechange = function() {
-    //if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-        //var response = JSON.parse(this.responseText);
-        //// console.log(response.current_condition.condition);
-      //var result = document.getElementById('weather-result');
-      //result.innerHTML = (response.current_condition.condition);
-    //}
-//};
-  //request.open('GET','https://www.prevision-meteo.ch/services/json/paris');
-    //request.send();
-//};
+//construire et envoyer une requete avec Fetch.
 
 
 

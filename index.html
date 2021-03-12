@@ -11,6 +11,7 @@
   <title>ORINOCO - Vente en ligne</title>
 
   <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/v4-shims.css">
@@ -50,14 +51,13 @@
     </div>
   </nav>
 
-  <!-- Page Content -->
   <div class="container">
 
     <div class="row">
 
       <div class="col-lg-3">
 
-        <h1 class="my-4 mt-5 pt-5 font-weight-bold">ORINOCO</h1>
+        <h1 id="result" class="my-4 mt-5 pt-5 font-weight-bold">ORINOCO</h1>
         <div class="list-group">
           <a href="#" class="list-group-item">Mobiliers</a>
           <a href="#" class="list-group-item">Enfant</a>
@@ -67,7 +67,9 @@
         </div>
 
       </div>
-      <!-- /.col-lg-3 -->
+
+    
+      <div class="">
 
       <div class="col-lg-9">
 
@@ -105,111 +107,7 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
-
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <div class="card-body" id="product-1">
-              <a href="product-1.html"><img class="card-img-top" src="http://localhost:3000/images/oak_1.jpg" alt=" table haute en bois" id="product-1-img"></a>
-                <h4 class="card-title">
-                  <a href="product-1.html" id="product-1-name">TABLE HAUTE CHÊNE</a>
-                </h4>
-                <h5 class="price" id="product-1-price">125€</h5>
-                <p class="card-text" id="product-1-resume"> la table haute lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer text-center">
-                <a href="#"><i class="fas fa-shopping-basket"></i></a> <!--shopping icon_add shopping list-->
-                <a href="#"><i class="far fa-heart ml-3"></i></a> <!--heart icon _ add wishlist-->
-                <a href="#"><i class="fa fa-share-alt ml-3" aria-hidden="true"></i></a><!--partage icon -->
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="product-1.html"><img class="card-img-top" src="http://localhost:3000/images/oak_2.jpg" alt="table en chêne" id="product-2-img"></a>
-              <div class="card-body" id="product-2">
-                <h4 class="card-title">
-                  <a href="product-1.html">TABLE</a>
-                </h4>
-                <h5 class="price" id="product-2-price">250€</h5>
-                <p class="card-text" id="product-2-resume"> Table en chêne lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="card-footer text-center">
-                <a href="#"><i class="fas fa-shopping-basket"></i></a> <!--shopping icon_add shopping list-->
-                <a href="#"><i class="far fa-heart ml-3"></i></a> <!--heart icon _ add wishlist-->
-                <a href="#"><i class="fa fa-share-alt ml-3" aria-hidden="true"></i></a><!--partage icon -->
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="product-1.html"><img class="card-img-top" src="http://localhost:3000/images/oak_3.jpg" alt="table ronde en bois" id="product-3-img"></a>
-              <div class="card-body" id="product-3">
-                <h4 class="card-title">
-                  <a href="product-1.html">TABLE RONDE</a>
-                </h4>
-                <h5 class="price" id="product-3-price">100€</h5>
-                <p class="card-text" id="product-3-resume"> Table ronde lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer text-center">
-                <a href="#"><i class="fas fa-shopping-basket"></i></a> <!--shopping icon_add shopping list-->
-                <a href="#"><i class="far fa-heart ml-3"></i></a> <!--heart icon _ add wishlist-->
-                <a href="#"><i class="fa fa-share-alt ml-3" aria-hidden="true"></i></a><!--partage icon -->
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="product-1.html"><img class="card-img-top" src="http://localhost:3000/images/oak_4.jpg" alt=" étagère en bois" id="product-4-img"></a>
-              <div class="card-body" id="product-4">
-                <h4 class="card-title">
-                  <a href="product-1.html">&Eacute;TAG&Egrave;RE EN BOIS</a>
-                </h4>
-                <h5 class="price" id="product-4-price">120€</h5>
-                <p class="card-text" id="product-4-resume">&Eacute;tagère en bois lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer text-center">
-                <a href="#"><i class="fas fa-shopping-basket"></i></a> <!--shopping icon_add shopping list-->
-                <a href="#"><i class="far fa-heart ml-3"></i></a> <!--heart icon _ add wishlist-->
-                <a href="#"><i class="fa fa-share-alt ml-3" aria-hidden="true"></i></a> 
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="product-1.html"><img class="card-img-top" src="http://localhost:3000/images/oak_5.jpg" alt="chaise vintage" id="product-5-img"></a>
-              <div class="card-body" id="product-5">
-                <h4 class="card-title">
-                  <a href="product-1.html">CHAISE VINTAGE</a>
-                </h4>
-                <h5 class="price" id="product-5-price">140€</h5>
-                <p class="card-text" id="product-5-resume"> Chaise vintage lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="card-footer text-center">
-                <a href="#"><i class="fas fa-shopping-basket"></i></a> <!--shopping icon_add shopping list-->
-                <a href="#"><i class="far fa-heart ml-3"></i></a> <!--heart icon _ add wishlist-->
-                <a href="#"><i class="fa fa-share-alt ml-3" aria-hidden="true"></i></a><!--partage icon -->
-              </div>
-            </div>
-          </div>
-          </div>
-
-        </div>
-        <!-- /.row -->
-
-      </div>
-      <!-- /.col-lg-9 -->
-
-    </div>
-    <!-- /.row -->
-
   </div>
-  <!-- /.container -->
 
   <!-- Footer -->
   <footer class="py-5 bg-dark">
@@ -222,7 +120,6 @@
         </ul>
     </div>
   </footer>
-
   <!-- Bootstrap core JavaScript -->
    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 
