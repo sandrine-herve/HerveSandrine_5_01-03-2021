@@ -20,8 +20,11 @@ class Product{
         fetch('http://localhost:3000/api/furniture').then(function(response){
             if(response.ok){
               response.json().then(function(data){
-              
+                
+                
                 showProducts(data);
+                carousel(data);
+
               } 
               );
             }
@@ -32,32 +35,35 @@ class Product{
 
     function carousel(data){
 
-      let containerCarousel = document.createElement('div');
-      containerCarousel.setAttribute('class','container-carousel col-lg-9');
-      containerCarousel.innerHTML();
-      
-    for ( let product of data){
-        //Ajouter un div pour la premiere image qui lance le carousel avec la class carousel-item active.
-        let carourelItemActive = document.createElement('div');
-        carourelItemActive.setAttribute('class','carousel-item active');
-        carouselInner.appendChild(carourelItemActive);
-        //Ajouter une image dans carousel.
-        let imageCarousel = document.createElement('img');
-        carourelItemActive.appendChild(imageCarousel);
-        imageCarousel.src = product.imageUrl;
-        imageCarousel.alt = product.name;
+      let carouselInner = document.getElementById('carousel-inner');
 
-        let carourelItem = document.createElement('div');
-        carourelItem.setAttribute('class','carousel-item');
-        carouselInner.appendChild(carourelItem);
+      //Ajouter un div pour la premiere image qui lance le carousel avec la class carousel-item active.
+      let carouselItemActive = document.createElement('div');
+      carouselItemActive.setAttribute('class','carousel-item active');
+      carouselInner.appendChild(carouselItemActive);
+
+      let firstProduct = data[0];
+
+      //Ajouter une image dans carousel.
+      let imageCarousel = document.createElement('img');
+      carouselItemActive.appendChild(imageCarousel);
+      imageCarousel.src = firstProduct.imageUrl;
+      imageCarousel.alt = firstProduct.name;
+
+      
+    for ( let i = 1; i < data.length; i++ ){
+        
+        let carouselItem = document.createElement('div');
+        carouselItem.setAttribute('class','carousel-item');
+        carouselInner.appendChild(carouselItem);
 
         let imageCarousel1 = document.createElement('img');
-        carourelItemActive.appendChild(imageCarousel1);
+        carouselItem.appendChild(imageCarousel1);
         imageCarousel1.src = product.imageUrl;
-        imageCarousel.alt = product.name;
+        imageCarousel1.alt = product.name;
 
     }
-      }
+    };
 
     function showProducts(data){
 
