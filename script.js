@@ -15,7 +15,7 @@ class Product{
 
 
 
-       window.onload = function(response) {
+      
         
         fetch('http://localhost:3000/api/furniture').then(function(response){
             if(response.ok){
@@ -31,7 +31,7 @@ class Product{
 
           }
         );
-      }
+      
 
     function carousel(data){
 
