@@ -30,7 +30,7 @@ function showChoice (data){
    cardBodyChoice.setAttribute('class','card-body');
    cardChoice.appendChild(cardBodyChoice);
 
-   let choiceProduct = data[0];
+   let choiceProduct = data[1];
 
    let imgChoice = document.createElement('img');
    imgChoice.setAttribute('class','card-img-top img-fluid');
@@ -91,27 +91,28 @@ function showChoice (data){
   let selectVarnich = document.createElement('select');
   selectVarnich.setAttribute('id','varnish-name');
   inputVarnishPrepend.appendChild(selectVarnich);
-  
-  let varnishDropDown = document. createElement('div');
-  varnishDropDown.setAttribute('id','varnishDropDown');
-  varnishDropDown.setAttribute('class','dropdown-content');
-  inputVarnishPrepend.appendChild(varnishDropDown);
-
-
-  //function DropDown(data){
-    //let elt = document.getElementById('varnishDropDown');
-    //let opt = data.varnish;
-
-    //for (i=0; i<data.length; i++) {
-      //opt[i] = "";
-    //}
-  //}
 
   let optionVarnish = document.createElement('option');
-  let optionVarnish_text = document.createTextNode(choiceProduct.varnish[0]);
+  let optionVarnish_text = document.createTextNode('--couleur de vernis--');
   optionVarnish.appendChild(optionVarnish_text);
   selectVarnich.appendChild(optionVarnish);
 
+  let optionVarnish0 = document.createElement('option');
+  let optionVarnish0_text = document.createTextNode(choiceProduct.varnish[0]);
+  optionVarnish0.appendChild(optionVarnish0_text);
+  selectVarnich.appendChild(optionVarnish0);
+
+  let optionVarnish1 = document.createElement('option');
+  let optionVarnish1_text = document.createTextNode(choiceProduct.varnish[1]);
+  optionVarnish1.appendChild(optionVarnish1_text);
+  selectVarnich.appendChild(optionVarnish1);
+
+  let optionVarnish2 = document.createElement('option');
+  let optionVarnish2_text = document.createTextNode(choiceProduct.varnish[2]);
+  optionVarnish2.appendChild(optionVarnish2_text);
+  selectVarnich.appendChild(optionVarnish2);
+
+  //Bouton pour ajouter a son panier puis envoyer ver page formulaire.
   let linkBasket = document.createElement('a');
   linkBasket.setAttribute('class','btn btn-success mt-5 my-5 px-4 py-2');
   linkBasket.setAttribute('id','add-cart-1');
@@ -120,17 +121,6 @@ function showChoice (data){
   linkBasket.appendChild(linkBasket_text);
   cardPersonalizing.appendChild(linkBasket);
 
-
-
-
-  
-  
-              
-              //<a href="panier-1.html" class="btn btn-success mt-5" id="add-cart-1">Ajouter à mon panier</a>
-            //</div>
-            
-          //</div>
-        //</div>
    
 
 }
