@@ -1,36 +1,36 @@
-class Product{
-  constructor(Id,Name, Price, Description, imageURL,varnish){
-    this.id = Id;
-    this.name = Name;
-    this.price = Price;
-    this.description = Description;
-    this.imageUrl = imageUrl;
-    this.varvnish = varvnish;
-  }
- }
+if (localStorage.getItem('monPanier')){
+  console.log('panier OK')
+}
+else{
+  console.log('création de panier')
+let init = [];
+localStorage.setItem('monPanier', (JSON.stringify(init)));
+}
 
-fetch('http://localhost:3000/api/furniture').then(function(response){
-            if(response.ok){
-              response.json().then(function(data){
-                
-                showChoice(data);
 
-              } 
-              );
-            }
+//Utiliser les paramètres GET .../product-1.html?valeur=clé,id=ex:5beaaf2e1c9d440000a57d9a.
+const params = new URLSearchParams(window.location.search)
+//(window.location.search) Renvoie un objet Location contenant des informations concernant l'URL actuelle
+// du document et fournit des méthodes pour modifier cette URL. Cette propriété peut être utilisée pour charger une autre page.
+// search =>  La partie de l'URL qui suit le symbole « ? »
+let fournitureId = params.get('id')
+//La get()méthode de l' URLSearchParams interface renvoie la première valeur associée au paramètre de recherche donné.
+const url = 'http://localhost:3000/api/furniture/' + fournitureId;
 
-          }
-        );
+// Faire un fetch sur la const url nous permettra de récuperer les données correpondantes a l'id choisit. 
+fetch(url)
+.then((response)=>response.json())
+.then(function(data){
+  let choiceProduct = data;
+  console.log(data);
 
-function showChoice (data){
-
-   let cardChoice = document.getElementById('choice');
+  let cardChoice = document.getElementById('choice');
 
    let cardBodyChoice = document.createElement('div');
    cardBodyChoice.setAttribute('class','card-body');
    cardChoice.appendChild(cardBodyChoice);
 
-   let choiceProduct = data[1];
+   
 
    let imgChoice = document.createElement('img');
    imgChoice.setAttribute('class','card-img-top img-fluid');
@@ -92,12 +92,21 @@ function showChoice (data){
   selectVarnich.setAttribute('id','varnish-name');
   inputVarnishPrepend.appendChild(selectVarnich);
 
-  let optionVarnish = document.createElement('option');
+  /*let optionVarnish = document.createElement('option');
   let optionVarnish_text = document.createTextNode('--couleur de vernis--');
   optionVarnish.appendChild(optionVarnish_text);
-  selectVarnich.appendChild(optionVarnish);
+  selectVarnich.appendChild(optionVarnish);*/
 
-  let optionVarnish0 = document.createElement('option');
+  let selectColor = document.getElementById('varnish-name');
+  let optionVarnish = "";
+  choiceProduct.varnish.forEach(color=>{
+    optionVarnish = document.createElement('option');
+    selectColor.appendChild(optionVarnish);
+    optionVarnish.setAttribute('value',color);
+    optionVarnish.textContent = color;
+  })
+
+  /*let optionVarnish0 = document.createElement('option');
   let optionVarnish0_text = document.createTextNode(choiceProduct.varnish[0]);
   optionVarnish0.appendChild(optionVarnish0_text);
   selectVarnich.appendChild(optionVarnish0);
@@ -110,7 +119,7 @@ function showChoice (data){
   let optionVarnish2 = document.createElement('option');
   let optionVarnish2_text = document.createTextNode(choiceProduct.varnish[2]);
   optionVarnish2.appendChild(optionVarnish2_text);
-  selectVarnich.appendChild(optionVarnish2);
+  selectVarnich.appendChild(optionVarnish2);*/
 
   //Bouton pour ajouter a son panier puis envoyer ver page formulaire.
   let linkBasket = document.createElement('a');
@@ -122,5 +131,7 @@ function showChoice (data){
   cardPersonalizing.appendChild(linkBasket);
 
    
+})
 
-}
+
+

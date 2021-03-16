@@ -1,3 +1,4 @@
+
 //Contenu dans mon object Product.
 class Product{
   constructor(Id,Name, Price, Description, imageURL){
@@ -24,6 +25,7 @@ class Product{
                 
                 showProducts(data);
                 carousel(data);
+                //choiceEvent(data);
 
               } 
               );
@@ -32,6 +34,7 @@ class Product{
           }
         );
       
+ 
 
     function carousel(data){
 
@@ -86,8 +89,13 @@ class Product{
 
         //Englober ma div dans un lien qui envoie vers product-1.html.
         let a = document.createElement('a');
-        a.href = 'product-1.html';
+        a.href = 'product-1.html?id='+ product._id;
+        a.setAttribute('id',product._id);
         div1.appendChild(a);
+
+        a.addEventListener('click', function(event){
+          fetchProduct (product._id);
+        });
 
         //Ajouter une <div> qui contient mes éléments.
         let div = document.createElement('div');
@@ -131,8 +139,6 @@ class Product{
 }
         
       }
-    
-    
 
 
   
@@ -144,9 +150,20 @@ class Product{
       //});
      //} )
 
-//Récupérer l'image du produit choisit, URL d'affichage de l'image résultante et objet produit sur showProduct () 
-//pour enfin l'afficher.
+//Ajouter un evenement au clic sur les différentes cartes.
+//const choiceEventList = document.getElementById(product._id);
 
+
+//for ( let choiceEvent of choiceEventList) {
+  //choiceEvent.addEventListener('click', function(event){
+    //console.log (event);
+//});
+//}
+
+
+//choiceEvent.addEventListener('click', function(event){
+  //console.log (event);
+//});
 
 
 
