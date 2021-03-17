@@ -139,3 +139,19 @@ localStorage.setItem('image',choiceProduct.imageUrl);*/
 
 //fin fonction then(data)//
 
+
+
+
+
+
+
+
+/*class Product{
+  constructor(Id,Name, Price, Description, imageURL){
+    this.id = Id;
+    this.name = Name;
+    this.price = Price;
+    this.description = Description;
+    this.imageUrl = imageUrl;
+  }
+ }*/
