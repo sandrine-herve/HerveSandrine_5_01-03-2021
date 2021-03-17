@@ -136,9 +136,11 @@ class Product{
 }
         
       }
+  //appeler la fonction qui videra le panier//
+  let removeCart =document.createElement('a');
+  removeCart.addEventListener('click',localStorage.clear())
 
 
-  
       //response.json().then(function(data){
         //console.log(data);
         //showProducts(data);
@@ -194,12 +196,12 @@ class Customer{
 
 //l'utilisateur a selectioné un produit, il aarive sr la fiche produit, au clic du bouton ajouter a mon panier, 
 //il est renvoyé a la page panier, unresume du produit et doit remplir un formulaire. 
-
+/*
 function addCart(cartEvent){//je veux que cette fonction ajoute le produit choisit par l'utilisateur.
   let tableHaute;
   let myOrder = new Order(tableHaute);
 }
-
+*/
 
 //const cart = document.getElementById('add-cart-1');
 //cart.addEventListener('click', addCart(cartEvent));

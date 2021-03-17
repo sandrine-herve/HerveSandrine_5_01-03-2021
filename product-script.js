@@ -3,7 +3,6 @@
 if (localStorage.getItem('monPanier')){
   console.log('panier OK')
 
-
 }
 //sinon je crée mon panier.
 else{
@@ -112,13 +111,22 @@ fetch(url)
   btnAddCart.setAttribute('class','btn btn-success mt-5 my-5 px-4 py-2');
   btnAddCart.setAttribute('id','add-to-cart');
   btnAddCart.setAttribute('href','panier-1.html');
-  let btnAddCart_text = document.createTextNode('Ajouter à mon panier');
+  let btnAddCart_text = document.createTextNode('Acheter');
   btnAddCart.appendChild(btnAddCart_text);
   cardPersonalizing.appendChild(btnAddCart);
-  let eventAddCart = document.getElementById('add-to-cart');
-  eventAddCart.addEventListener('click',addCart(choiceProduct));
+  btnAddCart.addEventListener('click',addCart(choiceProduct));
+  
+  //creer un  bouton qui vide le panier//
+  let removeCart = document.createElement('a');
+  removeCart.setAttribute('class','btn btn-danger mx-5 mt-5 my-5 px-4 py-2');
+  removeCart.setAttribute('id','remove-to-cart');
+  removeCart.setAttribute('href','index.html');
+  let removeCart_text = document.createTextNode('Vider mon panier');
+  removeCart.appendChild(removeCart_text);
+  cardPersonalizing.appendChild(removeCart);
+  
  
-})
+})//fin fonc tion then(data)//
 
 
   function addCart(choiceProduct){
@@ -128,7 +136,7 @@ localStorage.setItem('description',choiceProduct.description);
 localStorage.setItem('price',choiceProduct.price + "€");
 localStorage.setItem('id',choiceProduct._id);
 localStorage.setItem('image',choiceProduct.imageUrl);
-console.log('ajout panier')
+console.log('ajout panier');
 
 };
 
