@@ -8,9 +8,9 @@ if (localStorage.getItem('monPanier')){
 else{
   console.log('création de panier')
 //je crée une variable contenant un tableau qui se remplira des produits choisis. 
-let panier = [];
-let init = "";
-localStorage.setItem('monPanier', (JSON.stringify(init)));
+let panier = JSON.parse(localStorage.getItem("monPanier"));
+let init = [];
+localStorage.setItem('monPanier', init);
 }
 
 
@@ -114,42 +114,28 @@ fetch(url)
   let btnAddCart_text = document.createTextNode('Acheter');
   btnAddCart.appendChild(btnAddCart_text);
   cardPersonalizing.appendChild(btnAddCart);
-  btnAddCart.addEventListener('click',addCart(choiceProduct));
-  
-  //creer un  bouton qui vide le panier//
-  let removeCart = document.createElement('a');
-  removeCart.setAttribute('class','btn btn-danger mx-5 mt-5 my-5 px-4 py-2');
-  removeCart.setAttribute('id','remove-to-cart');
-  removeCart.setAttribute('href','index.html');
-  let removeCart_text = document.createTextNode('Vider mon panier');
-  removeCart.appendChild(removeCart_text);
-  cardPersonalizing.appendChild(removeCart);
-  
- 
-})//fin fonc tion then(data)//
+  //btnAddCart.addEventListener('click',addCart(choiceProduct));//
+  const btnAdd = document.getElementById('add-to-cart');
+  btnAdd.addEventListener('click',function(event){
 
+      addCart(choiceProduct);
+});
+
+
+});
 
   function addCart(choiceProduct){
-//let panier = [];
-localStorage.setItem('name',choiceProduct.name);
-localStorage.setItem('description',choiceProduct.description);
+    
+//const btnAdd = getElementById('add-to-cart');
+//let cart = localStorage.getItem('monPanier');
+//console.log(cart);
+//cart.push(JSON.stringify(choiceProduct));
+localStorage.setItem('monPanier',(JSON.stringify(choiceProduct)));
+/*localStorage.setItem('description',choiceProduct.description);
 localStorage.setItem('price',choiceProduct.price + "€");
 localStorage.setItem('id',choiceProduct._id);
-localStorage.setItem('image',choiceProduct.imageUrl);
-console.log('ajout panier');
+localStorage.setItem('image',choiceProduct.imageUrl);*/
+}
 
-};
+//fin fonction then(data)//
 
-
-
-
-
-/*class Product{
-  constructor(Id,Name, Price, Description, imageURL){
-    this.id = Id;
-    this.name = Name;
-    this.price = Price;
-    this.description = Description;
-    this.imageUrl = imageUrl;
-  }
- }*/

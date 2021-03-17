@@ -137,8 +137,8 @@ class Product{
         
       }
   //appeler la fonction qui videra le panier//
-  let removeCart =document.createElement('a');
-  removeCart.addEventListener('click',localStorage.clear())
+  /*let removeCart =document.createElement('a');
+  removeCart.addEventListener('click',localStorage.clear())*/
 
 
       //response.json().then(function(data){
@@ -171,20 +171,20 @@ class Product{
 
 
 class Order{
-	constructor(newTotalPrice, newCustomer, newPayement){
-		this.totalPrice = newTotalPrice;
-		this.customer = newCustomer;
-		this.payement = newPayement;
-		this.products = [];
-	}
+  constructor(newTotalPrice, newCustomer, newPayement){
+    this.totalPrice = newTotalPrice;
+    this.customer = newCustomer;
+    this.payement = newPayement;
+    this.products = [];
+  }
 }
 
 class Customer{
-	constructor(newFamilyName, newSurname, newAdress){
-		this.familyName = newFamilyName; 
-		this.surname = newSurname;
-		this.adress= newAdress;
-	}
+  constructor(newFamilyName, newSurname, newAdress){
+    this.familyName = newFamilyName; 
+    this.surname = newSurname;
+    this.adress= newAdress;
+  }
 }
 
  //Fonctions://
@@ -208,12 +208,12 @@ function addCart(cartEvent){//je veux que cette fonction ajoute le produit chois
 
 
 
-	//constructor(newTotalPrice, newCustomer, newPayement){
-		//this.totalPrice = newTotalPrice;
-		//this.customer = newCustomer;
-		//this.payement = newPayement;
-		//this.products = [];
-	//}
+  //constructor(newTotalPrice, newCustomer, newPayement){
+    //this.totalPrice = newTotalPrice;
+    //this.customer = newCustomer;
+    //this.payement = newPayement;
+    //this.products = [];
+  //}
 
 
 
@@ -241,7 +241,7 @@ function addCart(cartEvent){//je veux que cette fonction ajoute le produit chois
 //(Pour id: System.Guid  guid = System.Guid.NewGuid ();
 // String id = guid.ToString();)
 function aléatoire(){
-	return' Votre identifiant de commande:' +Date.now()+ Math.round(Math.random()*1000000);
+  return' Votre identifiant de commande:' +Date.now()+ Math.round(Math.random()*1000000);
 }
 
 //document.getElementById('order-id').innerHTML = aléatoire();
@@ -254,10 +254,6 @@ function aléatoire(){
  
 
 //construire et envoyer une requete avec Fetch.
-
-
-
-
 
 
 
