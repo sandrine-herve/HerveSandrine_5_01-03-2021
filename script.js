@@ -93,9 +93,6 @@ class Product{
         a.setAttribute('id',product._id);
         div1.appendChild(a);
 
-        a.addEventListener('click', function(event){
-          fetchProduct (product._id);
-        });
 
         //Ajouter une <div> qui contient mes éléments.
         let div = document.createElement('div');

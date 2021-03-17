@@ -1,9 +1,28 @@
+//comment mettre des valeurs dans le tableau, le client choisit et les données du poduits vont dans la panier dans le tableau let init.
+//mon panier est déja actif. getItem => on veut récuperer les valeurs des objets. 
 if (localStorage.getItem('monPanier')){
   console.log('panier OK')
+
+
+
+  function addCart(choiceProduct){
+//let panier = [];
+localStorage.setItem('name',choiceProduct.name);
+localStorage.setItem('description',choiceProduct.description);
+localStorage.setItem('price',choiceProduct.price + "€");
+localStorage.setItem('id',choiceProduct._id);
+localStorage.setItem('image',choiceProduct.imageUrl);
+console.log('ajout panier')
+
+};
+
 }
+//sinon je crée mon panier.
 else{
   console.log('création de panier')
-let init = [];
+//je crée une variable contenant un tableau qui se remplira des produits choisis. 
+let panier = [];
+let init = "";
 localStorage.setItem('monPanier', (JSON.stringify(init)));
 }
 
@@ -29,8 +48,6 @@ fetch(url)
    let cardBodyChoice = document.createElement('div');
    cardBodyChoice.setAttribute('class','card-body');
    cardChoice.appendChild(cardBodyChoice);
-
-   
 
    let imgChoice = document.createElement('img');
    imgChoice.setAttribute('class','card-img-top img-fluid');
@@ -92,13 +109,9 @@ fetch(url)
   selectVarnich.setAttribute('id','varnish-name');
   inputVarnishPrepend.appendChild(selectVarnich);
 
-  /*let optionVarnish = document.createElement('option');
-  let optionVarnish_text = document.createTextNode('--couleur de vernis--');
-  optionVarnish.appendChild(optionVarnish_text);
-  selectVarnich.appendChild(optionVarnish);*/
-
   let selectColor = document.getElementById('varnish-name');
   let optionVarnish = "";
+  //foreach permet d'éxécuter une fonction donnée ici color, une fois pour chaqe valeur de l'ensemble du set.
   choiceProduct.varnish.forEach(color=>{
     optionVarnish = document.createElement('option');
     selectColor.appendChild(optionVarnish);
@@ -106,32 +119,31 @@ fetch(url)
     optionVarnish.textContent = color;
   })
 
-  /*let optionVarnish0 = document.createElement('option');
-  let optionVarnish0_text = document.createTextNode(choiceProduct.varnish[0]);
-  optionVarnish0.appendChild(optionVarnish0_text);
-  selectVarnich.appendChild(optionVarnish0);
-
-  let optionVarnish1 = document.createElement('option');
-  let optionVarnish1_text = document.createTextNode(choiceProduct.varnish[1]);
-  optionVarnish1.appendChild(optionVarnish1_text);
-  selectVarnich.appendChild(optionVarnish1);
-
-  let optionVarnish2 = document.createElement('option');
-  let optionVarnish2_text = document.createTextNode(choiceProduct.varnish[2]);
-  optionVarnish2.appendChild(optionVarnish2_text);
-  selectVarnich.appendChild(optionVarnish2);*/
-
   //Bouton pour ajouter a son panier puis envoyer ver page formulaire.
-  let linkBasket = document.createElement('a');
-  linkBasket.setAttribute('class','btn btn-success mt-5 my-5 px-4 py-2');
-  linkBasket.setAttribute('id','add-cart-1');
-  linkBasket.setAttribute('href','panier-1.html');
-  let linkBasket_text = document.createTextNode('Ajouter à mon panier');
-  linkBasket.appendChild(linkBasket_text);
-  cardPersonalizing.appendChild(linkBasket);
-
-   
+  let btnAddCart = document.createElement('a');
+  btnAddCart.setAttribute('class','btn btn-success mt-5 my-5 px-4 py-2');
+  btnAddCart.setAttribute('id','add-to-cart');
+  btnAddCart.setAttribute('href','panier-1.html');
+  let btnAddCart_text = document.createTextNode('Ajouter à mon panier');
+  btnAddCart.appendChild(btnAddCart_text);
+  cardPersonalizing.appendChild(btnAddCart);
+  let eventAddCart = document.getElementById('add-to-cart');
+  eventAddCart.addEventListener('click',addCart(choiceProduct));
+ 
 })
 
 
 
+
+
+
+
+/*class Product{
+  constructor(Id,Name, Price, Description, imageURL){
+    this.id = Id;
+    this.name = Name;
+    this.price = Price;
+    this.description = Description;
+    this.imageUrl = imageUrl;
+  }
+ }*/
