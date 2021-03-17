@@ -4,18 +4,6 @@ if (localStorage.getItem('monPanier')){
   console.log('panier OK')
 
 
-
-  function addCart(choiceProduct){
-//let panier = [];
-localStorage.setItem('name',choiceProduct.name);
-localStorage.setItem('description',choiceProduct.description);
-localStorage.setItem('price',choiceProduct.price + "€");
-localStorage.setItem('id',choiceProduct._id);
-localStorage.setItem('image',choiceProduct.imageUrl);
-console.log('ajout panier')
-
-};
-
 }
 //sinon je crée mon panier.
 else{
@@ -133,6 +121,16 @@ fetch(url)
 })
 
 
+  function addCart(choiceProduct){
+//let panier = [];
+localStorage.setItem('name',choiceProduct.name);
+localStorage.setItem('description',choiceProduct.description);
+localStorage.setItem('price',choiceProduct.price + "€");
+localStorage.setItem('id',choiceProduct._id);
+localStorage.setItem('image',choiceProduct.imageUrl);
+console.log('ajout panier')
+
+};
 
 
 
