@@ -24,7 +24,7 @@ class Product{
                 
                 
                 showProducts(data);
-                carousel(data);
+                /*carousel(data);*/
                 //choiceEvent(data);
 
               } 
@@ -36,7 +36,7 @@ class Product{
       
  
 
-    function carousel(data){
+    /*function carousel(data){
 
       let carouselInner = document.getElementById('carousel-inner');
 
@@ -66,7 +66,7 @@ class Product{
         imageCarousel1.alt = product.name;
 
     }
-    };
+    };*/
 
     function showProducts(data){
 

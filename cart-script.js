@@ -11,7 +11,7 @@ panier = JSON.parse(localStorage.getItem('monPanier'));
 /*let panier = JSON.parse(localStorage.getItem("monPanier"));*/
 /*console.log(panier.name);*/
 
-let buyContainer = document.getElementById('buy');
+let buyContainer = document.getElementById('buyCard');
 
 //Ajouter div class="card mt-4"
 let cardBuy = document.createElement('div');
@@ -41,6 +41,7 @@ if (panier !== null){
 //Ajouter la photo du produit.
 let imgBuy = document.createElement('img');
 imgBuy.setAttribute('class','rounded float-left img-fluid img-thumbnail');
+imgBuy.setAttribute('id','imgCart');
 divBuyFourniture.appendChild(imgBuy);
 imgBuy.src = product.imageUrl;
 imgBuy.alt = product.name;
@@ -54,14 +55,14 @@ nameBuy.appendChild(nameBuy_text);
 
 let idBuy = document.createElement('p');
 let idBuy_text = document.createTextNode("Ref :" + product._id);
-idBuy.setAttribute('class','idBuy mx-3');
+idBuy.setAttribute('class','idBuy mx-3 my-2');
 idBuy.appendChild(idBuy_text);
 divBuyFourniture.appendChild(idBuy);
 
 
 //Ajouter le prix du meuble choisi.
 let priceBuy = document.createElement('p');
-priceBuy.setAttribute('class','description card-text mx-3');
+priceBuy.setAttribute('class','description card-text mx-3 my-2');
 let priceBuy_text = document.createTextNode("Prix:" + product.price + "€");
 priceBuy.appendChild(priceBuy_text);
 divBuyFourniture.appendChild(priceBuy);
@@ -72,7 +73,7 @@ somme += product.price;
 //fin bouble for
 //j'affiche le resultat de ma somme.
 let TotalPrice = document.createElement('p');
-TotalPrice.setAttribute('class','description font-weight-bold card-text mx-5 text-left ');
+TotalPrice.setAttribute('class','description font-weight-bold card-text mx-5 my-5');
 TotalPrice.setAttribute('id','TotalPrice');
 let TotalPrice_text = document.createTextNode("Prix Total :" + somme + "€");
 TotalPrice.appendChild(TotalPrice_text);
@@ -121,16 +122,16 @@ divBuyFourniture.appendChild(btnDiv);
 let formValid = document.getElementById('buy');
 
 //Les variables dont j'ai besoin pour le nom.
-let formName = document.getElementById('name');
-let missName = document.getElementById('missName');
+let formLastName = document.getElementById('lastName');
+let missLastName = document.getElementById('missName');
 //regex autorisant que les lettres, les apostrophes, les tirets et les espaces.
 //1er partie : commencer soit par une lettre non accentuée en majuscule ou en minuscule, soit par l’un des caractères suivants : « éèîïÉÈÎÏ ».
 //2eme partie :  au moins une autre lettre en minuscule ou par l’un des caractères suivants : « éèêàçîï »
 let nameValid =  /^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/;
 
 //Les variables dont j'ai besoin pour le prenom.
-let formSurname = document.getElementById('surname');
-let missSurname = document.getElementById('missSurname');
+let formFirstName = document.getElementById('firstName');
+let missFirstName = document.getElementById('missSurname');
 let surnameValid = /^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/;
 
 //Les variables dont j'ai besoin pour l'adresse.
@@ -146,14 +147,6 @@ let formCity = document.getElementById('city');
 let missCity = document.getElementById('missCity');
 let cityValid = /^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/;
 
-//Les variables dont j'ai besoin pour le pays.
-let formCountry = document.getElementById('country');
-let missCountry = document.getElementById('missCountry');
-
-//Les variables dont j'ai besoin pour le numero de tel.
-let formPhone = document.getElementById('tel');
-let missPhone = document.getElementById('missPhone');
-let phoneValid = /^[0-9] $/;
 
 //Les variables dont j'ai besoin pour la date.
 let formDate = document.getElementById('date');
@@ -164,69 +157,72 @@ let formMail = document.getElementById('email');
 let missMail = document.getElementById('missMail');
 let mailValid = /^[\w\-]+(\.[\w\-]+)*@[\w\-]+(\.[\w\-]+)*\.[\w\-]{2,4}$/;
 
-//Les variables dont j'ai besoin pour le mot de passe.
-let formPassword = document.getElementById('password');
-let missPassword = document.getElementById('missPassword');
-let passwordValid = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,15})$/;
-
-
 formValid.addEventListener('click', function(){
 //si control event true.
-
+control(event);
 //appelé ma fonction d'envoie POST.
-let products = [];
-let contact = {
-	firstName: surname.value,
-	lastName: name.value,
-	
+let products = [];//attend tous les id.
+
+for ( let product of panier){
+	products.push(product._id)
 };
+
+let contact = {
+	firstName: firstName.value,
+	lastName: lastName.value,
+    address: address.Value,
+    city: city.value,
+    email: email.value,
+};
+
 const postData = {contact, products};
+
 console.log(postData);
 
+//envoyer postData avec la methode fetch post.
+//http://localhost:3000/api/furniture/order.
+/*fetch('http://localhost:3000/api/furniture/order',{
+	method: "POST",
+	body: JSON.stringify(postData),
+	headers: {"Content-type": "application/json; charset=UTF-8"}
+});*/
 
-
-	//envoyer avec la methode fetch post.
 
 });
 
-
-
-
-/*function control(event){
+function control(event){
 
 	let resultControl = true;
 
-
 	//si le champ est vide
-	if(formName.validity.valueMissing){
+	if(formLastName.validity.valueMissing){
 		event.preventDefault();//on bloque le déclenchement de l'évènement.
-		missName.textContent = 'Nom manquant !';
-		missName.style.color = 'red';
+		missLastName.textContent = 'Nom manquant !';
+		missLastName.style.color = 'red';
 		resultControl = false;
 	//si le champ est mal rempli
-	} else if (nameValid.test(formName.value) == false) {
+	} else if (nameValid.test(formLastName.value) == false) {
 		event.preventDefault();
-		missName.textContent = 'Format incorrect';
-		missName.style.color = 'orange';
+		missLastName.textContent = 'Format incorrect';
+		missLastName.style.color = 'orange';
 		resultControl = false;
 	} else {
-		missName.textContent = '';
+		missLastName.textContent = '';
 	};
-	
 
     //si le champ est vide
-	if (formSurname.validity.valueMissing) {
+	if (formFirstName.validity.valueMissing) {
 		event.preventDefault();//on bloque le déclenchement de l'évènement.
-		missSurname.textContent = 'Prénom manquant !';
-		missSurname.style.color = 'red';
+		missFirstName.textContent = 'Prénom manquant !';
+		missFirstName.style.color = 'red';
 		resultControl = false;
-	} else if (surnameValid.test(formName.value) == false) {
+	} else if (surnameValid.test(formFirstName.value) == false) {
 		event.preventDefault();
-		missSurname.textContent = 'Format incorrect';
-		missSurname.style.color = 'orange';
+		missFirstName.textContent = 'Format incorrect';
+		missFirstName.style.color = 'orange';
 		resultControl = false;
 	}else {
-		missSurname.textContent = '';
+		missFirstName.textContent = '';
 	};
 
     //si le champ est vide
@@ -268,21 +264,6 @@ console.log(postData);
 	} else {
 		missCity.textContent = '';
 	};
-	
-    //si le champ est vide
-    if (formPhone.validity.valueMissing) {
-		event.preventDefault();
-		missPhone.textContent = ' Numéro de téléphone manquant !';
-		missPhone.style.color = 'red';
-		resultControl = false;
-	} else if (phoneValid.test(formName.value) == false) {
-		event.preventDefault();
-		missPhone.textContent = 'Format incorrect';
-		missPhone.style.color = 'orange';
-		resultControl = false;
-	} else {
-		missPhone.textContent = '';
-	};
 
     //si le champ est vide
 	if (formDate.validity.valueMissing) {
@@ -309,21 +290,8 @@ console.log(postData);
 		missMail.textContent = '';
 	};
 
-    //si le champ est vide
-	if (formPassword.validity.valueMissing) {
-		event.preventDefault();
-		missPassword.textContent = ' Mot de passe manquant !';
-		missPassword.style.color = 'red';
-		resultControl = false;
-	} else if (mailValid.test(formName.value) == false) {
-		event.preventDefault();
-		missPassword.textContent = 'Le mot de passe doit avoir 8 à 15 caractères, au moins une lettre minuscule, au moins une lettre majuscule, au moins un chiffre, au moins un de ces caractères spéciaux: $ @ % * + - _ !, aucun autre caractère possible: pas de & ni de { par exemple)';
-		missPassword.style.color = 'orange';
-		resultControl = false;
-	} else {
-		missPassword.textContent = '';
-	};
+    
 
 	return resultControl;
-}*/
+}
 

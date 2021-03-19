@@ -1,9 +1,5 @@
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
-footer{
-	position:relative;
-	top: 1vh;
-}
 
 
 #buy{
@@ -21,3 +17,18 @@ footer{
   position:relative;
   bottom:150px;
   }
+
+#imgCart{
+	width: 80px;
+	height: 80px;
+}
+
+#alert-validate{
+	position:relative;
+	left: 20%;
+}
+
+#buy{
+	position:relative;
+	top:1vh;
+}

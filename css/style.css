@@ -9928,11 +9928,6 @@ h3 {
     border-color: #dee2e6;
   }
 }
-footer {
-  position: relative;
-  top: 1vh;
-}
-
 #buy {
   display: flex;
   flex-direction: column-reverse;
@@ -9947,6 +9942,21 @@ footer {
 #menu-cart {
   position: relative;
   bottom: 150px;
+}
+
+#imgCart {
+  width: 80px;
+  height: 80px;
+}
+
+#alert-validate {
+  position: relative;
+  left: 20%;
+}
+
+#buy {
+  position: relative;
+  top: 1vh;
 }
 
 /*# sourceMappingURL=style.css.map */
