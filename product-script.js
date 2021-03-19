@@ -1,17 +1,43 @@
+
 //comment mettre des valeurs dans le tableau, le client choisit et les données du poduits vont dans la panier dans le tableau let init.
 //mon panier est déja actif. getItem => on veut récuperer les valeurs des objets. 
-if (localStorage.getItem('monPanier')){
-  console.log('panier OK')
+if (localStorage.getItem('monPanier') !== null){
+console.log('panier OK');
+//je crée une variable contenant un tableau qui se remplira des produits choisis.
+//let panier = JSON.parse(localStorage.getItem('monPanier'));
 
 }
 //sinon je crée mon panier.
 else{
+  console.log(localStorage.getItem('monPanier'));
   console.log('création de panier')
-//je crée une variable contenant un tableau qui se remplira des produits choisis. 
-let panier = JSON.parse(localStorage.getItem("monPanier"));
+//creation de mon panier.
 let init = [];
-localStorage.setItem('monPanier', init);
+localStorage.setItem('monPanier', JSON.stringify(init));
 }
+
+//fonction qui ajoute a mon panier.
+function addCart(choiceProduct){
+/*localStorage.setItem('monPanier',(JSON.stringify(choiceProduct)));
+*/
+//if (localStorage.getItem('monPanier')){
+
+let listeItem = JSON.parse(localStorage.getItem('monPanier'));
+//la traduction qui est en valeur de boite, je veux l'afficher dans mon panier.
+
+/*push(localStorage.setItem('monPanier',(JSON.stringify(choiceProduct))))*/
+let count = listeItem.push(choiceProduct);
+localStorage.setItem('monPanier',(JSON.stringify(listeItem)))
+//}
+
+};
+
+
+
+
+//création d'un objet panier.
+// const caddy = ["choiceProduct"];
+// console.log(caddy)
 
 
 //Utiliser les paramètres GET .../product-1.html?valeur=clé,id=ex:5beaaf2e1c9d440000a57d9a.
@@ -124,20 +150,14 @@ fetch(url)
 
 });
 
-  function addCart(choiceProduct){
-    
-//const btnAdd = getElementById('add-to-cart');
-//let cart = localStorage.getItem('monPanier');
-//console.log(cart);
-//cart.push(JSON.stringify(choiceProduct));
-localStorage.setItem('monPanier',(JSON.stringify(choiceProduct)));
-/*localStorage.setItem('description',choiceProduct.description);
-localStorage.setItem('price',choiceProduct.price + "€");
-localStorage.setItem('id',choiceProduct._id);
-localStorage.setItem('image',choiceProduct.imageUrl);*/
-}
 
-//fin fonction then(data)//
+
+
+
+
+
+ 
+//fin fonc tion then(data)//
 
 
 

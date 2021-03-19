@@ -24,7 +24,7 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
       <img src="images\logo.png" width="50" height="50" alt=" logo ORINOCO">
       <a class="navbar-brand" href="#">ONIROCO</a>
@@ -50,13 +50,20 @@
       </div>
     </div>
   </nav>
+
+
   <!-- Page Content -->
   <div class="container" id="container">
-    <form>
+
+    <form action="http://localhost:3000/api/furniture" method="get" name="formSaisie" id="form">
+      <div class="alert alert-success row my-5 ml-1 col-9" id='alert-validate' role="alert">
+            Votre article a été ajouté a votre panier !
+          </div>
 
     <div class="row">
 
-      <div class="col-lg-3">
+
+      <div class="col-lg-3" id="menu-cart">
 
         <h1 class="my-4 mt-5 pt-5 font-weight-bold">ORINOCO</h1>
         <div class="list-group">
@@ -68,15 +75,21 @@
         </div>
 
       </div>
+
+
       <!-- /.col-lg-3 faire un résumé des articles mis dans le panier, avec photo et pris, nbre d'article et calcul de prix total -->
 
-      <div class="col-lg-9" id="buy">
+      <div class="col-lg-9 my-5" id="buy">
+      
+        <!--Dans cette div il y a aussi une partie JS-->
 
+        <div>
         
         <!-- /.card -->
 
-        <div class="card card-outline-secondary my-4">
-          <div class="card-header">
+        <div class="card card-outline-secondary ">
+          
+          <div class="card-header ">
             Adresse de livraison
           </div>
           <div class="card-body">
@@ -92,7 +105,7 @@
               <div class="form-group">
                   <ul class="list-inline">
                     <li class="list-inline-item" aria-required="">
-                        <label for="name">Nom:*</label>
+                        <label id="name-customer" for="name">Nom:*</label>
                         <input type="text" class="form-control col-12" name="name" id="name" required pattern="[a-z]">
                     </li>
                     <li class="list-inline-item" aria-required="">
@@ -139,7 +152,7 @@
              </div>
 
              <div>
-                <label for="country" required>Pays:*</label>
+                <label for="country" required >Pays:*</label>
                 <select class="form-control col-4" name = "pays" id="country">
                 <option value = "France" selected = "selected"> France </option>
 
@@ -393,7 +406,7 @@
 
             <div class="form-group">
               <label for="phone" class="mt-3">Mobile:*</label>
-              <input type="text" class="form-control col-4 " id="phone" aria-describedby="emailHelp" placeholder="Numéro de mobile" required pattern="[0-9]">
+              <input type="tel" class="form-control col-4 " id="phone" maxlength="10" aria-describedby="emailHelp" placeholder="Numéro de mobile" required pattern="[0-9]">
             </div>
 
             <div class="form-group">
@@ -433,62 +446,7 @@
         
         <!-- /.card -->
 
-        <div class="card card-outline-third my-4">
-          <div class="card-header">
-            Moyen de paiement
-          </div>
-           <div class="card-body">
-             <div class="form-payement ">
-              <div class="credit">
-                <div class="form-group">
-                  <input type="checkbox" name="credit-card" id="credit-card">
-                  <label for="credit-card">Carte bancaire</label>
-                  <br>
-                  <label for="id-credit-card">Numméro de carte:*</label>
-                  <input type="text" class="form-control" name="id-credit-card" id="id-credit-card" required>
-                  <ul class="list-inline">
-                    <li class="list-inline-item">
-                      <label for="expiry">Date d'expiration:*</label>
-                      <div class="input-group date1" data-date-format="mm/yyyy">
-                        <input type="date" class="form-control" name="expiry" id="expiry" placeholder="mm/yyyy" required>
-                    </li>
-                    <li class="list-inline-item">
-                      <label for="crypto">Cryptogramme:*</label>
-                      <input type="cc-csc" class="form-control" name="crypto" id="crypto" required>
-                    </li>
-                    <li>
-                      <input type="checkbox" name="card-memory" id="card-memory" checked="">
-                      <label for="card-memory">Mémoriser ma carte</label>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <hr>
-              <div class="paypal">
-                <input type="checkbox" name="paypal" id="paypal">
-                <label for="paypal">Paypal</label>
-                <br>
-                <a href="https://www.paypal.com/" class="btn btn-success mt-3">Payer avec Paypal</a>
-              </div>
-              <hr>
-              <div class="gift-card">
-                <input type="checkbox" name="gift" id="gift">
-                <label for="gift">Carte cadeau</label>
-                <ul class="list-inline">
-                  <li class="list-inline-item">
-                    <label for="number-gift">Numéro de carte cadeau:</label>
-                    <input type="text" class="form-control" name="number-gift" id="number-gift">
-                  </li>
-                  <li class="list-inline-item">
-                    <label for="amount">Montant:</label>
-                    <input type="text" class="form-control" name="amount" id="amount">
-                  </li>
-                </ul>
-                <button type="button" class="btn btn-success">Appliquer à ma carte</button>
-              </div>
-             </div>
-           </div>
-        </div>
+        
 
         <div class="col-s-6 col-12">
           <input type="checkbox" name="condition" id="condition">
@@ -499,7 +457,8 @@
         </div>
 
         
-      <button type="button" class="btn btn-success col-12 my-5" id="buy">Acheter ma commande!</button> 
+      <button type="submit"  value="Ok"  class="btn btn-success col-12 my-5 " id="buy">Valider ma commande!</button>
+      <!-- Ajouter la function valite sur bouton bas de page --> 
     </form> 
   </div>
 
