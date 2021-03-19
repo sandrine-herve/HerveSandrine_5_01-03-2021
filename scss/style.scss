@@ -3,8 +3,8 @@
 footer{
 	position:relative;
 	top: 1vh;
-	
 }
+
 
 #buy{
 	display:flex;
@@ -21,11 +21,3 @@ footer{
   position:relative;
   bottom:150px;
   }
-
-input:invalid {
-          box-shadow: 0 0 5px 1px red;
-      }
-
-input:valid {
-        border: 2px solid black;
-      }

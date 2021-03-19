@@ -112,73 +112,218 @@ divBuyFourniture.appendChild(btnDiv);
   validateOrder.setAttribute('type','submit');
   validateOrder.setAttribute('value','Ok');
   /*validateOrder.setAttribute('href','gratitude.html');*/
-  let validateOrder_text = document.createTextNode('Valider ma commande');
+  let validateOrder_text = document.createTextNode('Valider mon panier');
+  //mettre une ancre qui envoie vers le formulaire.
   validateOrder.appendChild(validateOrder_text);
   btnDiv.appendChild(validateOrder);
-  /*validateOrder.addEventListener('click',validateForm());
-  */
-
-/*
-  function validateForm(){
-  	let formulaire = document.forms['form'];
-//vérifications du nom de l'utilisateur.
-  	if (formulaire.elements'[name-customer]'.value){
-  		return true;
-  	} 
-
-  	else {
-        alert('Vérifier les champs!')
-  		return false;
-  	}
-  	}
   
 
+let formValid = document.getElementById('buy');
 
-//Tenttive de valider le nom de l'utilisateur.
- let nameCustomer = document.getElementById("name-customer");
+//Les variables dont j'ai besoin pour le nom.
+let formName = document.getElementById('name');
+let missName = document.getElementById('missName');
+//regex autorisant que les lettres, les apostrophes, les tirets et les espaces.
+//1er partie : commencer soit par une lettre non accentuée en majuscule ou en minuscule, soit par l’un des caractères suivants : « éèîïÉÈÎÏ ».
+//2eme partie :  au moins une autre lettre en minuscule ou par l’un des caractères suivants : « éèêàçîï »
+let nameValid =  /^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/;
 
-nameCustomer.addEventListener("keyup", function (event) {
-  if(nameCustomer.validity.typeMismatch) {
-    nameCustomer.setCustomValidity("J'attend un nom, mon cher !");
-  } else {
-    nameCustomer.setCustomValidity("");
-  }
+//Les variables dont j'ai besoin pour le prenom.
+let formSurname = document.getElementById('surname');
+let missSurname = document.getElementById('missSurname');
+let surnameValid = /^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/;
+
+//Les variables dont j'ai besoin pour l'adresse.
+let formAddress = document.getElementById('address');
+let missAddress = document.getElementById('missAddress');
+
+//Les variables dont j'ai besoin pour le code postal.
+let formPostal = document.getElementById('postal');
+let missPostal = document.getElementById('missPostal');
+//let postalValid = /^[0-9] $/;
+//Les variables dont j'ai besoin pour la ville.
+let formCity = document.getElementById('city');
+let missCity = document.getElementById('missCity');
+let cityValid = /^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/;
+
+//Les variables dont j'ai besoin pour le pays.
+let formCountry = document.getElementById('country');
+let missCountry = document.getElementById('missCountry');
+
+//Les variables dont j'ai besoin pour le numero de tel.
+let formPhone = document.getElementById('tel');
+let missPhone = document.getElementById('missPhone');
+let phoneValid = /^[0-9] $/;
+
+//Les variables dont j'ai besoin pour la date.
+let formDate = document.getElementById('date');
+let missDate = document.getElementById('missDate');
+
+//Les variables dont j'ai besoin pour l'email.
+let formMail = document.getElementById('email');
+let missMail = document.getElementById('missMail');
+let mailValid = /^[\w\-]+(\.[\w\-]+)*@[\w\-]+(\.[\w\-]+)*\.[\w\-]{2,4}$/;
+
+//Les variables dont j'ai besoin pour le mot de passe.
+let formPassword = document.getElementById('password');
+let missPassword = document.getElementById('missPassword');
+let passwordValid = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,15})$/;
+
+
+formValid.addEventListener('click', function(){
+//si control event true.
+
+//appelé ma fonction d'envoie POST.
+let products = [];
+let contact = {
+	firstName: surname.value,
+	lastName: name.value,
+	
+};
+const postData = {contact, products};
+console.log(postData);
+
+
+
+	//envoyer avec la methode fetch post.
+
 });
 
-//Tenttive de valider le numéro de telephone  l'utilisateur.
- let telCustomer = document.getElementById("phone");
-
-telCustomer.addEventListener("keyup", function (event) {
-  if(telCustomer.validity.validationMessage) {
-    telCustomer.setCustomValidity("J'attend un nom, mon cher !");
-  } else {
-    telCustomer.setCustomValidity("");
-  }
-});*/
-
-//Validation de mail.
-let email = document.getElementById('Email');
 
 
-email.addEventListener("input", function (event) {
-  // Chaque fois que l'utilisateur saisit quelque chose
-  // on vérifie la validité du champ e-mail.
-  if (email.validity.valid) {
-    // S'il y a un message d'erreur affiché et que le champ
-    // est valide, on retire l'erreur
-    error.innerHTML = ""; // On réinitialise le contenu
-    error.className = "error"; // On réinitialise l'état visuel du message
-  }
-}, false);
-form.addEventListener("submit", function (event) {
-  // Chaque fois que l'utilisateur tente d'envoyer les données
-  // on vérifie que le champ email est valide.
-  if (!email.validity.valid) {
 
-    // S'il est invalide, on affiche un message d'erreur personnalisé
-    error.innerHTML = "J'attends une adresse e-mail correcte, mon cher !";
-    error.className = "error active";
-    // Et on empêche l'envoi des données du formulaire
-    event.preventDefault();
-  }
-}, false);
+/*function control(event){
+
+	let resultControl = true;
+
+
+	//si le champ est vide
+	if(formName.validity.valueMissing){
+		event.preventDefault();//on bloque le déclenchement de l'évènement.
+		missName.textContent = 'Nom manquant !';
+		missName.style.color = 'red';
+		resultControl = false;
+	//si le champ est mal rempli
+	} else if (nameValid.test(formName.value) == false) {
+		event.preventDefault();
+		missName.textContent = 'Format incorrect';
+		missName.style.color = 'orange';
+		resultControl = false;
+	} else {
+		missName.textContent = '';
+	};
+	
+
+    //si le champ est vide
+	if (formSurname.validity.valueMissing) {
+		event.preventDefault();//on bloque le déclenchement de l'évènement.
+		missSurname.textContent = 'Prénom manquant !';
+		missSurname.style.color = 'red';
+		resultControl = false;
+	} else if (surnameValid.test(formName.value) == false) {
+		event.preventDefault();
+		missSurname.textContent = 'Format incorrect';
+		missSurname.style.color = 'orange';
+		resultControl = false;
+	}else {
+		missSurname.textContent = '';
+	};
+
+    //si le champ est vide
+	if (formAddress.validity.valueMissing) {
+		event.preventDefault();//on bloque le déclenchement de l'évènement.
+		missAddress.textContent = 'Adresse manquante !';
+		missAddress.style.color = 'red';
+		resultControl = false;
+	} else {
+		missAddress.textContent = '';
+	};
+
+    //si le champ est vide
+	if (formPostal.validity.valueMissing) {
+		event.preventDefault();
+		missPostal.textContent = ' Code Postal manquant !';
+		missPostal.style.color = 'red';
+		resultControl = false;
+	} else if (postalValid.test(formName.value) == false) {
+		event.preventDefault();
+		missPostal.textContent = 'Format incorrect';
+		missPostal.style.color = 'orange';
+		resultControl = false;
+	} else {
+		missPostal.textContent = '';
+	};
+
+    //si le champ est vide
+	if (formCity.validity.valueMissing) {
+		event.preventDefault();
+		missCity.textContent = ' Ville manquante !';
+		missCity.style.color = 'red';
+		resultControl = false;
+	} else if (cityValid.test(formName.value) == false) {
+		event.preventDefault();
+		missCity.textContent = 'Format incorrect';
+		missCity.style.color = 'orange';
+		resultControl = false;
+	} else {
+		missCity.textContent = '';
+	};
+	
+    //si le champ est vide
+    if (formPhone.validity.valueMissing) {
+		event.preventDefault();
+		missPhone.textContent = ' Numéro de téléphone manquant !';
+		missPhone.style.color = 'red';
+		resultControl = false;
+	} else if (phoneValid.test(formName.value) == false) {
+		event.preventDefault();
+		missPhone.textContent = 'Format incorrect';
+		missPhone.style.color = 'orange';
+		resultControl = false;
+	} else {
+		missPhone.textContent = '';
+	};
+
+    //si le champ est vide
+	if (formDate.validity.valueMissing) {
+		event.preventDefault();
+		missDate.textContent = ' Date manquante !';
+		missDate.style.color = 'red';
+		resultControl = false;
+	} else {
+		missDate.textContent = '';
+	};
+
+    //si le champ est vide
+	if (formMail.validity.valueMissing) {
+		event.preventDefault();
+		missMail.textContent = ' Email manquant !';
+		missMail.style.color = 'red';
+		resultControl = false;
+	} else if (mailValid.test(formName.value) == false) {
+		event.preventDefault();
+		missMail.textContent = 'Format incorrect';
+		missMail.style.color = 'orange';
+		resultControl = false;
+	} else {
+		missMail.textContent = '';
+	};
+
+    //si le champ est vide
+	if (formPassword.validity.valueMissing) {
+		event.preventDefault();
+		missPassword.textContent = ' Mot de passe manquant !';
+		missPassword.style.color = 'red';
+		resultControl = false;
+	} else if (mailValid.test(formName.value) == false) {
+		event.preventDefault();
+		missPassword.textContent = 'Le mot de passe doit avoir 8 à 15 caractères, au moins une lettre minuscule, au moins une lettre majuscule, au moins un chiffre, au moins un de ces caractères spéciaux: $ @ % * + - _ !, aucun autre caractère possible: pas de & ni de { par exemple)';
+		missPassword.style.color = 'orange';
+		resultControl = false;
+	} else {
+		missPassword.textContent = '';
+	};
+
+	return resultControl;
+}*/
+
