@@ -20,23 +20,24 @@ cardBuy.setAttribute('id','card jumbotron ');
 buyContainer.appendChild(cardBuy);
 
 let headingBuy = document.createElement('h2');
-headingBuy.setAttribute('class','display-4 mt-4');
+headingBuy.setAttribute('class',' titreBuy display-4 mb-5');
 let headingBuy_text = document.createTextNode('Mon Panier');
 headingBuy.appendChild(headingBuy_text);
 cardBuy.appendChild(headingBuy);
 
-
-//Ajouter div qui contient élément de mon meuble.
-let divBuyFourniture = document.createElement('div');
-divBuyFourniture.setAttribute('class','fourniture_buy row jumbotron ');
-divBuyFourniture.setAttribute('id','tableau');
-cardBuy.appendChild(divBuyFourniture);
 
 let somme = 0;
 
 //Rajouter une boucle pour plusieurs produits for ...of
 if (panier !== null){
 	for ( let product of panier) {
+
+//Ajouter div qui contient élément de mon meuble.
+let divBuyFourniture = document.createElement('div');
+divBuyFourniture.setAttribute('class','fourniture_buy row my-4 ');
+divBuyFourniture.setAttribute('id','tableau');
+cardBuy.appendChild(divBuyFourniture);
+
 
 //Ajouter la photo du produit.
 let imgBuy = document.createElement('img');
@@ -62,31 +63,33 @@ divBuyFourniture.appendChild(idBuy);
 
 //Ajouter le prix du meuble choisi.
 let priceBuy = document.createElement('p');
-priceBuy.setAttribute('class','description card-text mx-3 my-2');
+priceBuy.setAttribute('class','description card-text mx-3 my-2 font-weight-bold');
 let priceBuy_text = document.createTextNode("Prix:" + product.price + "€");
 priceBuy.appendChild(priceBuy_text);
 divBuyFourniture.appendChild(priceBuy);
+
 
 //je récupere le prix de mon article a chaque boucle.
 somme += product.price;
 }
 //fin bouble for
+
 //j'affiche le resultat de ma somme.
 let TotalPrice = document.createElement('p');
-TotalPrice.setAttribute('class','description font-weight-bold card-text mx-5 my-5');
+TotalPrice.setAttribute('class','description font-weight-bold text-uppercase card-text ml-2 my-5 col-12');
 TotalPrice.setAttribute('id','TotalPrice');
 let TotalPrice_text = document.createTextNode("Prix Total :" + somme + "€");
 TotalPrice.appendChild(TotalPrice_text);
-divBuyFourniture.appendChild(TotalPrice);
+cardBuy.appendChild(TotalPrice);
 }
 // Mettre les bouton dans une meme div aligner.
 let btnDiv = document.createElement('div');
-btnDiv.setAttribute('class','btnDiv row mx-5 ');
-divBuyFourniture.appendChild(btnDiv);
+btnDiv.setAttribute('class','btnDiv');
+cardBuy.appendChild(btnDiv);
 
 //Ajouter un bouton ajouter a mon panier.
   let addCartAgain = document.createElement('a');
-  addCartAgain.setAttribute('class','btn btn-primary mx-4 mt-5 my-5 px-4 py-2');
+  addCartAgain.setAttribute('class','btn btn-primary col-12 my-3');
   addCartAgain.setAttribute('id','addCartAgain');
   addCartAgain.setAttribute('href','index.html');
   let addCartAgain_text = document.createTextNode('Retourner à mes achats');
@@ -96,7 +99,7 @@ divBuyFourniture.appendChild(btnDiv);
 
 //Ajouter bouton pour vider mon pannier.
   let removeCart = document.createElement('a');
-  removeCart.setAttribute('class','btn btn-danger mx-4 mt-5 my-5 px-4 py-2');
+  removeCart.setAttribute('class','btn btn-danger col-12 my-3');
   removeCart.setAttribute('id','remove-to-cart');
   removeCart.setAttribute('href','index.html');
   let removeCart_text = document.createTextNode('Vider mon panier');
@@ -107,16 +110,17 @@ divBuyFourniture.appendChild(btnDiv);
  localStorage.clear()});
 
  //Ajouter un bouton pour valider ma commande, qui envoie vers la page gratitude.html.
-  let validateOrder = document.createElement('a');
-  validateOrder.setAttribute('class','btn btn-success col-12 my-5');
+  /*let validateOrder = document.createElement('a');
+  validateOrder.setAttribute('class','btn btn-success col-12 my-3');
   validateOrder.setAttribute('id','validateOrder');
   validateOrder.setAttribute('type','submit');
   validateOrder.setAttribute('value','Ok');
+  validateOrder.setAttribute('name','OK');
   /*validateOrder.setAttribute('href','gratitude.html');*/
-  let validateOrder_text = document.createTextNode('Valider mon panier');
+  /*let validateOrder_text = document.createTextNode('Valider mon panier');*/
   //mettre une ancre qui envoie vers le formulaire.
-  validateOrder.appendChild(validateOrder_text);
-  btnDiv.appendChild(validateOrder);
+  /*/validateOrder.appendChild(validateOrder_text);
+  btnDiv.appendChild(validateOrder);*/
   
 
 let formValid = document.getElementById('buy');

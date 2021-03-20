@@ -59,11 +59,11 @@ fetch(url)
   let cardChoice = document.getElementById('choice');
 
    let cardBodyChoice = document.createElement('div');
-   cardBodyChoice.setAttribute('class','card-body');
+   cardBodyChoice.setAttribute('class','card-body mt-5');
    cardChoice.appendChild(cardBodyChoice);
 
    let imgChoice = document.createElement('img');
-   imgChoice.setAttribute('class','card-img-top img-fluid');
+   imgChoice.setAttribute('class','card-img-top img-fluid mt-5');
    cardBodyChoice.appendChild(imgChoice);
       imgChoice.src = choiceProduct.imageUrl;
       imgChoice.alt = choiceProduct.name;
@@ -100,7 +100,7 @@ fetch(url)
   cardPersonalizing.appendChild(headingPersonalizing);
 
   let personalizingCardBody = document.createElement('div');
-  personalizingCardBody.setAttribute('class','card-body');
+  personalizingCardBody.setAttribute('class','cardPersonalizing');
   cardPersonalizing.appendChild(personalizingCardBody);
 
   let inputVarnish = document.createElement('div');

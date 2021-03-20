@@ -1,11 +1,30 @@
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
+#footer-index{
+	position:relative;
+	top: 2700px;
 
+	@media (min-width:825px){
+	position:relative;
+	top: 3000px;
+	}
 
-#buy{
-	display:flex;
-    flex-direction:column-reverse;
+	@media (min-width:975px){
+	position:relative;
+	top: 3100px;
+	}
+
+	@media (min-width:992px){
+	position:relative;
+	top: 1200px;
+	}
+
+	@media (min-width:1320px){
+	position:relative;
+	top: 1500px;
+	}
 }
+
 
 #alert-validate{
 	position:relative;
@@ -23,12 +42,42 @@
 	height: 80px;
 }
 
-#alert-validate{
-	position:relative;
-	left: 20%;
+.position{
+  position:relative;
+  right:200px;
+  width:82%;
+
+  @media (min-width:375px){
+	width:84%;
+	}
+
+  @media (min-width:425px){
+	width:86%;
+	}
+
+	@media (min-width:768px){
+	width:88%;
+	}
+
+	@media (min-width:1024px){
+	width:69%;
+	}
+
+	@media (min-width:1440px){
+	width:70%;
+	}
 }
 
-#buy{
-	position:relative;
-	top:1vh;
+#buyCard{
+	display:flex;
+    flex-direction:column-reverse;
+}
+
+.titreBuy{
+	font-size: 40px;
+	font-weight:bold;
+}
+
+.idBuy{
+	font-size: 15px;
 }

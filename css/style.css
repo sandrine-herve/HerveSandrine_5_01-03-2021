@@ -9928,9 +9928,33 @@ h3 {
     border-color: #dee2e6;
   }
 }
-#buy {
-  display: flex;
-  flex-direction: column-reverse;
+#footer-index {
+  position: relative;
+  top: 2700px;
+}
+@media (min-width: 825px) {
+  #footer-index {
+    position: relative;
+    top: 3000px;
+  }
+}
+@media (min-width: 975px) {
+  #footer-index {
+    position: relative;
+    top: 3100px;
+  }
+}
+@media (min-width: 992px) {
+  #footer-index {
+    position: relative;
+    top: 1200px;
+  }
+}
+@media (min-width: 1320px) {
+  #footer-index {
+    position: relative;
+    top: 1500px;
+  }
 }
 
 #alert-validate {
@@ -9949,14 +9973,49 @@ h3 {
   height: 80px;
 }
 
-#alert-validate {
+.position {
   position: relative;
-  left: 20%;
+  right: 200px;
+  width: 82%;
+}
+@media (min-width: 375px) {
+  .position {
+    width: 84%;
+  }
+}
+@media (min-width: 425px) {
+  .position {
+    width: 86%;
+  }
+}
+@media (min-width: 768px) {
+  .position {
+    width: 88%;
+  }
+}
+@media (min-width: 1024px) {
+  .position {
+    width: 69%;
+  }
+}
+@media (min-width: 1440px) {
+  .position {
+    width: 70%;
+  }
 }
 
-#buy {
-  position: relative;
-  top: 1vh;
+#buyCard {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.titreBuy {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.idBuy {
+  font-size: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */

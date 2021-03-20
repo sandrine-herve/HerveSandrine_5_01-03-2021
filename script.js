@@ -76,7 +76,7 @@ class Product{
  
         //Ajouter une <section> "fourniture" dans <main>.
         let section = document.createElement('section');
-        section.setAttribute('class','fourniture row col-12');
+        section.setAttribute('class','fourniture row col-12 mx-md-5 mx-1');
         section.setAttribute('id','result');
         main.appendChild(section);
       
@@ -84,7 +84,7 @@ class Product{
       for (let product of data){
         //englober a et ma div elt dans une div.
         let div1 = document.createElement('div');
-        div1.setAttribute('class','card h-100 col-lg-3 col-md-6 mx-4 my-4 shadow');
+        div1.setAttribute('class','card h-100 col-lg-3 col-md-6 mx-4 my-2 shadow');
         section.appendChild(div1);
 
         //Englober ma div dans un lien qui envoie vers product-1.html.
@@ -116,7 +116,7 @@ class Product{
 
         //Ajouter un paragraphe pour la description.
         let para = document.createElement('p');
-        para.setAttribute('class','description card-text');
+        para.setAttribute('class','description card-text text-secondary');
         let para_text = document.createTextNode(product.description);
         para.appendChild(para_text);
         div.appendChild(para);

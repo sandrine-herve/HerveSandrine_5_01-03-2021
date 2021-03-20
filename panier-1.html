@@ -45,22 +45,22 @@
       </div>
     </div>
   </nav>
-
+ 
 
   <!-- Page Content -->
   <div class="container" id="container">
 
     <div class="row">
-      <div class="alert alert-success row my-5 col-6" id='alert-validate' role="alert">
+      <div class="position">
+        <div class="alert alert-success row my-5" id='alert-validate' role="alert">
             Votre article a été ajouté a votre panier !
-          </div>
-
-      
-      <form action="http://localhost:3000/api/furniture" method="post" name="formSaisie" id="form">
+        </div>
+      </div>
+      <form action="http://localhost:3000/api/furniture" method="post" name="formSaisie" class="col-12" id="form">
 
       <!-- /.col-lg-3 faire un résumé des articles mis dans le panier, avec photo et pris, nbre d'article et calcul de prix total -->
 
-      <div class="col-lg-9 my-5" id="buyCard">
+      <div class="col-lg-9 my-4" id="buyCard">
       
         <!--Dans cette div il y a aussi une partie JS-->
 
@@ -143,6 +143,8 @@
             </form>
             </div>
           </div>
+
+          <input type="submit" value="Valider ma commande!"  class="btn btn-success col-12 my-5 " id="buy"></input>
         </div>
         
         <!-- /.card -->
@@ -150,7 +152,7 @@
 
 
         
-      <input type="submit" value="Valider ma commande!"  class="btn btn-success col-12 my-5 " id="buy"></input>
+      
       <!-- Ajouter la function valite sur bouton bas de page --> 
     </form> 
   </div>
