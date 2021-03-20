@@ -109,20 +109,7 @@ cardBuy.appendChild(btnDiv);
  removeCart.addEventListener('click',function(event){
  localStorage.clear()});
 
- //Ajouter un bouton pour valider ma commande, qui envoie vers la page gratitude.html.
-  /*let validateOrder = document.createElement('a');
-  validateOrder.setAttribute('class','btn btn-success col-12 my-3');
-  validateOrder.setAttribute('id','validateOrder');
-  validateOrder.setAttribute('type','submit');
-  validateOrder.setAttribute('value','Ok');
-  validateOrder.setAttribute('name','OK');
-  /*validateOrder.setAttribute('href','gratitude.html');*/
-  /*let validateOrder_text = document.createTextNode('Valider mon panier');*/
-  //mettre une ancre qui envoie vers le formulaire.
-  /*/validateOrder.appendChild(validateOrder_text);
-  btnDiv.appendChild(validateOrder);*/
   
-
 let formValid = document.getElementById('buy');
 
 //Les variables dont j'ai besoin pour le nom.
@@ -145,7 +132,7 @@ let missAddress = document.getElementById('missAddress');
 //Les variables dont j'ai besoin pour le code postal.
 let formPostal = document.getElementById('postal');
 let missPostal = document.getElementById('missPostal');
-//let postalValid = /^[0-9] $/;
+let postalValid = /^[0-9]{5}$/;
 //Les variables dont j'ai besoin pour la ville.
 let formCity = document.getElementById('city');
 let missCity = document.getElementById('missCity');
@@ -185,14 +172,17 @@ console.log(postData);
 
 //envoyer postData avec la methode fetch post.
 //http://localhost:3000/api/furniture/order.
-/*fetch('http://localhost:3000/api/furniture/order',{
+fetch('http://localhost:3000/api/furniture/order',{
 	method: "POST",
 	body: JSON.stringify(postData),
 	headers: {"Content-type": "application/json; charset=UTF-8"}
-});*/
+})
 
+.then(function(res){ console.log(res) })
+.catch(function(res){ console.log(res) })
 
 });
+
 
 function control(event){
 
@@ -245,7 +235,7 @@ function control(event){
 		missPostal.textContent = ' Code Postal manquant !';
 		missPostal.style.color = 'red';
 		resultControl = false;
-	} else if (postalValid.test(formName.value) == false) {
+	} else if (postalValid.test(formPostal.value) == false) {
 		event.preventDefault();
 		missPostal.textContent = 'Format incorrect';
 		missPostal.style.color = 'orange';
@@ -260,7 +250,7 @@ function control(event){
 		missCity.textContent = ' Ville manquante !';
 		missCity.style.color = 'red';
 		resultControl = false;
-	} else if (cityValid.test(formName.value) == false) {
+	} else if (cityValid.test(formCity.value) == false) {
 		event.preventDefault();
 		missCity.textContent = 'Format incorrect';
 		missCity.style.color = 'orange';
@@ -285,7 +275,7 @@ function control(event){
 		missMail.textContent = ' Email manquant !';
 		missMail.style.color = 'red';
 		resultControl = false;
-	} else if (mailValid.test(formName.value) == false) {
+	} else if (mailValid.test(formMail.value) == false) {
 		event.preventDefault();
 		missMail.textContent = 'Format incorrect';
 		missMail.style.color = 'orange';
