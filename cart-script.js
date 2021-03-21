@@ -82,6 +82,7 @@ let TotalPrice_text = document.createTextNode("Prix Total :" + somme + "€");
 TotalPrice.appendChild(TotalPrice_text);
 cardBuy.appendChild(TotalPrice);
 }
+
 // Mettre les bouton dans une meme div aligner.
 let btnDiv = document.createElement('div');
 btnDiv.setAttribute('class','btnDiv');
@@ -148,38 +149,51 @@ let formMail = document.getElementById('email');
 let missMail = document.getElementById('missMail');
 let mailValid = /^[\w\-]+(\.[\w\-]+)*@[\w\-]+(\.[\w\-]+)*\.[\w\-]{2,4}$/;
 
-formValid.addEventListener('click', function(){
+
+formValid.addEventListener('click', function(event){
 //si control event true.
-control(event);
-//appelé ma fonction d'envoie POST.
-let products = [];//attend tous les id.
+if (control(event)){
+	console.log("Controles OK");
+	//appelé ma fonction d'envoie POST.
+	let products = [];//attend tous les id.
 
-for ( let product of panier){
-	products.push(product._id)
-};
+	for ( let product of panier){
+		products.push(product._id)
+	};
 
-let contact = {
-	firstName: firstName.value,
-	lastName: lastName.value,
-    address: address.Value,
-    city: city.value,
-    email: email.value,
-};
+	let contact = {
+		firstName: firstName.value,
+		lastName: lastName.value,
+	    address: address.value,
+	    city: city.value,
+	    email: email.value,
+	};
 
-const postData = {contact, products};
+	const postData = {contact, products};
 
-console.log(postData);
+	console.log(postData);
+	// stockage du contenu du formulaire dans local storage
+	localStorage.setItem('postData', JSON.stringify(postData));
+// 	//envoyer postData avec la methode fetch post.
+// 	//http://localhost:3000/api/furniture/order.
+// 	fetch('http://localhost:3000/api/furniture/order',{
+// 		method: "POST",
+// 		body: JSON.stringify(postData),
+// 		headers: {"Content-type": "application/json"}
+// 	})
+// //.then(response => alert(JSON.stringify(response)))
+// 	.then((res)=>res.json())
+// 	.then((data)=>{
+// 		if(data.orderId){
+// 			console.log(data); 
+// 			localStorage.setItem('postData', JSON.stringify(postData));
+// 		} else {
+// 			console.log("erreur") + console.log(data);
+// 		} 	
+// 	})
+// 	.catch(function(res){ console.log("erreur") + console.log(res) })
+}
 
-//envoyer postData avec la methode fetch post.
-//http://localhost:3000/api/furniture/order.
-fetch('http://localhost:3000/api/furniture/order',{
-	method: "POST",
-	body: JSON.stringify(postData),
-	headers: {"Content-type": "application/json; charset=UTF-8"}
-})
-
-.then(function(res){ console.log(res) })
-.catch(function(res){ console.log(res) })
 
 });
 

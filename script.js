@@ -10,14 +10,6 @@ class Product{
   }
  }
 
-
-//exécute la fonction lorsque le document est chargé.
-//Intégre les éléments dont j'ai besoin.
-
-
-
-      
-        
         fetch('http://localhost:3000/api/furniture').then(function(response){
             if(response.ok){
               response.json().then(function(data){
@@ -33,40 +25,6 @@ class Product{
 
           }
         );
-      
- 
-
-    /*function carousel(data){
-
-      let carouselInner = document.getElementById('carousel-inner');
-
-      //Ajouter un div pour la premiere image qui lance le carousel avec la class carousel-item active.
-      let carouselItemActive = document.createElement('div');
-      carouselItemActive.setAttribute('class','carousel-item active');
-      carouselInner.appendChild(carouselItemActive);
-
-      let firstProduct = data[0];
-
-      //Ajouter une image dans carousel.
-      let imageCarousel = document.createElement('img');
-      carouselItemActive.appendChild(imageCarousel);
-      imageCarousel.src = firstProduct.imageUrl;
-      imageCarousel.alt = firstProduct.name;
-
-      
-    for ( let i = 1; i < data.length; i++ ){
-        let product = data[i];
-        let carouselItem = document.createElement('div');
-        carouselItem.setAttribute('class','carousel-item');
-        carouselInner.appendChild(carouselItem);
-
-        let imageCarousel1 = document.createElement('img');
-        carouselItem.appendChild(imageCarousel1);
-        imageCarousel1.src = product.imageUrl;
-        imageCarousel1.alt = product.name;
-
-    }
-    };*/
 
     function showProducts(data){
 
@@ -136,124 +94,42 @@ class Product{
 }
         
       }
-  //appeler la fonction qui videra le panier//
-  /*let removeCart =document.createElement('a');
-  removeCart.addEventListener('click',localStorage.clear())*/
 
-
-      //response.json().then(function(data){
-        //console.log(data);
-        //showProducts(data);
-        //var result = document.getElementById('result');
-        //result.innerHTML = data.toString();
-      //});
-     //} )
-
-//Ajouter un evenement au clic sur les différentes cartes.
-//const choiceEventList = document.getElementById(product._id);
-
-
-//for ( let choiceEvent of choiceEventList) {
-  //choiceEvent.addEventListener('click', function(event){
-    //console.log (event);
-//});
-//}
-
-
-//choiceEvent.addEventListener('click', function(event){
-  //console.log (event);
-//});
-
-
-
-
-
-
-
-class Order{
-  constructor(newTotalPrice, newCustomer, newPayement){
-    this.totalPrice = newTotalPrice;
-    this.customer = newCustomer;
-    this.payement = newPayement;
-    this.products = [];
-  }
-}
-
-class Customer{
-  constructor(newFamilyName, newSurname, newAdress){
-    this.familyName = newFamilyName; 
-    this.surname = newSurname;
-    this.adress= newAdress;
-  }
-}
-
- //Fonctions://
-//L'utilisateur sur la page d'accueil, peut "aimer" le produit=> vers wishlist en haut de page.
-//L'utilisateur sur la page d'acceuil peut ajouter a son panier en cliquant sur l'icone le produit s'ajoute au panier en haut 
-//de la page d'accueil un nombre s'affiche devant le panier. 
-//L'utilisateur sur la page d'accueil peut partager le produit en cliquant sur l'icone, une fenêtre s'ouvre et il peut choisir 
-// quel moyen de diffusion. 
-
-//l'utilisateur a selectioné un produit, il aarive sr la fiche produit, au clic du bouton ajouter a mon panier, 
-//il est renvoyé a la page panier, unresume du produit et doit remplir un formulaire. 
-/*
-function addCart(cartEvent){//je veux que cette fonction ajoute le produit choisit par l'utilisateur.
-  let tableHaute;
-  let myOrder = new Order(tableHaute);
-}
-*/
-
-//const cart = document.getElementById('add-cart-1');
-//cart.addEventListener('click', addCart(cartEvent));
-
-
-
-  //constructor(newTotalPrice, newCustomer, newPayement){
-    //this.totalPrice = newTotalPrice;
-    //this.customer = newCustomer;
-    //this.payement = newPayement;
-    //this.products = [];
-  //}
-
-
-
-
- //page panier,En haut de page, l'informaton du produit et du prix + résumé + photo de celui ci apparait en haut de page=> faire une card avec
- // un objet JS qui montre l'objet choisit par l'utilisateur.
- 
-
-
-
-
- //1) Quand l'utilisateur clique sur le bouton "acheter ma commande!"
- //2) Vérification des champs obligatoires du formulaire.
- function verification(){}
- // si champs mal remplis, l'utilisateur reste sur la page avec des messages d'erreurs sur les champs concernés.
- // si champs bien remplis, l'utilisateur est renvoyé vers la page remerciement.
-
-
-
-
-
-
-//1) Quand l'utilisateur est envoyé sur le page remerciement.
-//2) Un identifiant de comande est créé. 
-//(Pour id: System.Guid  guid = System.Guid.NewGuid ();
-// String id = guid.ToString();)
-function aléatoire(){
+/*function aléatoire(){
   return' Votre identifiant de commande:' +Date.now()+ Math.round(Math.random()*1000000);
-}
+}*/
 
 //document.getElementById('order-id').innerHTML = aléatoire();
 
-//3) Un résumé qui change en fonction du produit choisit de sa commande est créé. Photo change en fonction du produit choisit 
-//+ prix total commande en fonction du produit choisit.
 
+  /*function carousel(data){
 
+      let carouselInner = document.getElementById('carousel-inner');
 
- 
+      //Ajouter un div pour la premiere image qui lance le carousel avec la class carousel-item active.
+      let carouselItemActive = document.createElement('div');
+      carouselItemActive.setAttribute('class','carousel-item active');
+      carouselInner.appendChild(carouselItemActive);
 
-//construire et envoyer une requete avec Fetch.
+      let firstProduct = data[0];
 
+      //Ajouter une image dans carousel.
+      let imageCarousel = document.createElement('img');
+      carouselItemActive.appendChild(imageCarousel);
+      imageCarousel.src = firstProduct.imageUrl;
+      imageCarousel.alt = firstProduct.name;
 
+      
+    for ( let i = 1; i < data.length; i++ ){
+        let product = data[i];
+        let carouselItem = document.createElement('div');
+        carouselItem.setAttribute('class','carousel-item');
+        carouselInner.appendChild(carouselItem);
 
+        let imageCarousel1 = document.createElement('img');
+        carouselItem.appendChild(imageCarousel1);
+        imageCarousel1.src = product.imageUrl;
+        imageCarousel1.alt = product.name;
+
+    }
+    };*/

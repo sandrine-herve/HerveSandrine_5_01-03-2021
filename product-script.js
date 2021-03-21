@@ -142,6 +142,7 @@ fetch(url)
   cardPersonalizing.appendChild(btnAddCart);
   //btnAddCart.addEventListener('click',addCart(choiceProduct));//
   const btnAdd = document.getElementById('add-to-cart');
+  
   btnAdd.addEventListener('click',function(event){
 
       addCart(choiceProduct);
@@ -149,10 +150,6 @@ fetch(url)
 
 
 });
-
-
-
-
 
 
 
@@ -166,12 +163,3 @@ fetch(url)
 
 
 
-/*class Product{
-  constructor(Id,Name, Price, Description, imageURL){
-    this.id = Id;
-    this.name = Name;
-    this.price = Price;
-    this.description = Description;
-    this.imageUrl = imageUrl;
-  }
- }*/
