@@ -256,7 +256,7 @@ function control(event){
 		resultControl = false;
 	} else {
 		missPostal.textContent = '';
-	};*/
+	};
 
     //si le champ est vide
 	if (formCity.validity.valueMissing) {
