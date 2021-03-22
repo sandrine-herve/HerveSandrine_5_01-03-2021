@@ -131,9 +131,9 @@ let formAddress = document.getElementById('address');
 let missAddress = document.getElementById('missAddress');
 
 //Les variables dont j'ai besoin pour le code postal.
-let formPostal = document.getElementById('postal');
+/*let formPostal = document.getElementById('postal');
 let missPostal = document.getElementById('missPostal');
-let postalValid = /^[0-9]{5}$/;
+let postalValid = /^[0-9]{5}$/;*/
 //Les variables dont j'ai besoin pour la ville.
 let formCity = document.getElementById('city');
 let missCity = document.getElementById('missCity');
@@ -141,8 +141,8 @@ let cityValid = /^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-Zéè
 
 
 //Les variables dont j'ai besoin pour la date.
-let formDate = document.getElementById('date');
-let missDate = document.getElementById('missDate');
+/*let formDate = document.getElementById('date');
+let missDate = document.getElementById('missDate');*/
 
 //Les variables dont j'ai besoin pour l'email.
 let formMail = document.getElementById('email');
@@ -244,7 +244,7 @@ function control(event){
 	};
 
     //si le champ est vide
-	if (formPostal.validity.valueMissing) {
+	/*if (formPostal.validity.valueMissing) {
 		event.preventDefault();
 		missPostal.textContent = ' Code Postal manquant !';
 		missPostal.style.color = 'red';
@@ -256,7 +256,7 @@ function control(event){
 		resultControl = false;
 	} else {
 		missPostal.textContent = '';
-	};
+	};*/
 
     //si le champ est vide
 	if (formCity.validity.valueMissing) {
@@ -274,7 +274,7 @@ function control(event){
 	};
 
     //si le champ est vide
-	if (formDate.validity.valueMissing) {
+	/*if (formDate.validity.valueMissing) {
 		event.preventDefault();
 		missDate.textContent = ' Date manquante !';
 		missDate.style.color = 'red';
@@ -282,7 +282,7 @@ function control(event){
 	} else {
 		missDate.textContent = '';
 	};
-
+*/
     //si le champ est vide
 	if (formMail.validity.valueMissing) {
 		event.preventDefault();

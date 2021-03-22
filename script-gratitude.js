@@ -60,23 +60,18 @@ function showRef(postData){
 	for (let ref of products){
 
 		let imgRef = document.createElement('img');
-		imgRef.setAttribute('class', 'card-img-top');
+		imgRef.setAttribute('class', 'rounded img-fluid img-thumbnail ml-5');
+		imgRef.setAttribute('id', 'cartimg');
 		imgRef.src = ref.imageUrl;
 		imgRef.alt = ref.name;
 		refOrder.appendChild(imgRef);
 
-		let cardRef = document.createElement('div');
-		cardRef.setAttribute('class', 'card-body');
-		refOrder.appendChild(cardRef);
-
 		let cardTitle = document.createElement('h5');
 		cardTitle.setAttribute('class','card-title');
+		cardTitle.setAttribute('id','card-title');
 		let cardTitle_text = document.createTextNode(ref.name);
 		cardTitle.appendChild(cardTitle_text);
-		cardRef.appendChild(cardTitle);
-
-
-		
+		refOrder.appendChild(cardTitle);
 
 	}
 }
