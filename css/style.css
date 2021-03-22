@@ -10031,7 +10031,8 @@ h3 {
 #card-title {
   position: relative;
   bottom: 50px;
-  left: 50px;
+  left: 120px;
+  width: 50%;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -67,7 +67,7 @@ function showRef(postData){
 		refOrder.appendChild(imgRef);
 
 		let cardTitle = document.createElement('h5');
-		cardTitle.setAttribute('class','card-title');
+		cardTitle.setAttribute('class','');
 		cardTitle.setAttribute('id','card-title');
 		let cardTitle_text = document.createTextNode(ref.name);
 		cardTitle.appendChild(cardTitle_text);
